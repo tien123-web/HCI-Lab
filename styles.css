@@ -7,8 +7,13 @@ body {
 
 .container {
     width: 90%; /* Chiều rộng của khung chứa */
+    max-width: 1200px; /* Giới hạn chiều rộng tối đa */
     margin: auto;
     padding: 20px;
+}
+
+h2 {
+    text-align: center; /* Canh giữa tiêu đề */
 }
 
 .subjects-container {
@@ -28,6 +33,7 @@ body {
     text-decoration: none; /* Bỏ gạch chân */
     font-size: 1.5em; /* Kích thước chữ */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng cho nút */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu khi hover */
 }
 
 .button:hover {
