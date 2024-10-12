@@ -1,73 +1,103 @@
-/* Đặt kiểu cho toàn bộ body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
     background-color: #f8f9fa;
 }
 
-/* Tiêu đề của môn học */
-h2, h3 {
-    color: #333;
+.container {
+    display: flex;
+    height: 100vh;
 }
 
-/* Container của mỗi môn học */
-.subject {
-    margin-bottom: 30px;
+/* Sidebar for lessons */
+.lessons-sidebar {
+    width: 25%;
+    background-color: #f1f1f1;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #ccc;
 }
 
-/* Header môn học */
-.subject h2 {
-    color: #007bff;
-    font-size: 1.5em;
-    margin-bottom: 15px;
+.lessons-sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
-/* Bố cục các phần tài liệu */
-.materials h3 {
-    color: #495057;
-    font-size: 1.2em;
-    margin-top: 20px;
-}
-
-/* Kiểu cho danh sách tài liệu */
-.materials ul {
+.lessons-sidebar ul {
     list-style-type: none;
-    padding: 0;
 }
 
-/* Kiểu cho từng tài liệu */
-.materials ul li {
+.lessons-sidebar ul li {
     margin: 10px 0;
 }
 
-/* Liên kết tài liệu */
-.materials ul li a {
+.lessons-sidebar ul li a {
     text-decoration: none;
     color: #007bff;
-    font-weight: bold;
+    font-size: 16px;
 }
 
-/* Hiệu ứng hover cho liên kết */
-.materials ul li a:hover {
-    text-decoration: underline;
-    color: #0056b3;
+.lessons-sidebar ul li a.active {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-/* Kiểu cho phần không có tài liệu */
-.no-docs {
-    font-style: italic;
-    color: #6c757d;
+.material-content {
+    width: 75%;
+    padding: 30px;
+    overflow-y: scroll;
 }
 
-/* Kiểu cho footer */
-footer {
-    margin-top: 40px;
+.material-content h1 {
+    font-size: 26px;
+    margin-top: 20px;
+}
+
+.material-item {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.material-item h3 {
+    margin-bottom: 10px;
+}
+
+.view-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.view-button:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    padding: 10px;
+    background-color: #f1f1f1;
     text-align: center;
-    color: #6c757d;
-    font-size: 0.9em;
+    border-top: 1px solid #ccc;
+}
+
+.back-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
 }
