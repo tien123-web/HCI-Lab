@@ -19,12 +19,11 @@
         }
 
         .subjects-sidebar {
-            flex: 1;
+            flex: 1; /* Chiếm toàn bộ không gian bên trái */
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-right: 20px;
         }
 
         .subjects-sidebar h2 {
@@ -37,7 +36,8 @@
         }
 
         .subjects-sidebar ul li {
-            margin-bottom: 10px;
+            margin-bottom: 30px; /* Khoảng cách giữa các mục lớn hơn */
+            text-align: center; /* Căn giữa chữ */
         }
 
         .subjects-sidebar ul li a {
@@ -58,45 +58,16 @@
             color: white;
         }
 
+        .book-icon {
+            display: block;
+            margin: 10px auto; /* Căn giữa icon */
+            width: 50px; /* Độ rộng icon */
+            height: 50px; /* Độ cao icon */
+        }
+
+        /* Ẩn nội dung bên phải */
         .material-content {
-            flex: 3;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .material-section {
-            display: none;
-        }
-
-        .material-section h1 {
-            margin-top: 0;
-        }
-
-        .material-item {
-            margin-bottom: 15px;
-        }
-
-        .material-item h3 {
-            margin: 0;
-        }
-
-        .view-button, .back-button {
-            text-decoration: none;
-            background-color: #007bff;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        .view-button:hover, .back-button:hover {
-            background-color: #0056b3;
-        }
-
-        .footer {
-            margin-top: 20px;
+            display: none; /* Ẩn nội dung bên phải */
         }
     </style>
 </head>
@@ -105,109 +76,59 @@
         <div class="subjects-sidebar">
             <h2>Môn học lớp 10</h2>
             <ul>
-                <li><a href="#" class="button active" onclick="showSubject('math', this)">Toán</a></li>
-                <li><a href="#" class="button" onclick="showSubject('literature', this)">Văn</a></li>
-                <li><a href="#" class="button" onclick="showSubject('english', this)">Anh</a></li>
-                <li><a href="#" class="button" onclick="showSubject('history', this)">Sử</a></li>
-                <li><a href="#" class="button" onclick="showSubject('geography', this)">Địa</a></li>
-                <li><a href="#" class="button" onclick="showSubject('gdcd', this)">GDCD</a></li>
-                <li><a href="#" class="button" onclick="showSubject('physics', this)">Lý</a></li>
-                <li><a href="#" class="button" onclick="showSubject('chemistry', this)">Hóa</a></li>
+                <li>
+                    <a href="#" class="button active" onclick="showSubject('math', this)">
+                        <img src="book-icon.png" alt="Toán" class="book-icon"> <!-- Đường dẫn đến icon quyển sách -->
+                        Toán
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="button" onclick="showSubject('literature', this)">
+                        <img src="book-icon.png" alt="Văn" class="book-icon">
+                        Văn
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="button" onclick="showSubject('english', this)">
+                        <img src="book-icon.png" alt="Anh" class="book-icon">
+                        Anh
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="button" onclick="showSubject('history', this)">
+                        <img src="book-icon.png" alt="Sử" class="book-icon">
+                        Sử
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="button" onclick="showSubject('geography', this)">
+                        <img src="book-icon.png" alt="Địa" class="book-icon">
+                        Địa
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="button" onclick="showSubject('gdcd', this)">
+                        <img src="book-icon.png" alt="GDCD" class="book-icon">
+                        GDCD
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="button" onclick="showSubject('physics', this)">
+                        <img src="book-icon.png" alt="Lý" class="book-icon">
+                        Lý
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="button" onclick="showSubject('chemistry', this)">
+                        <img src="book-icon.png" alt="Hóa" class="book-icon">
+                        Hóa
+                    </a>
+                </li>
             </ul>
         </div>
 
         <div class="material-content">
-            <div id="math" class="material-section" style="display: block;">
-                <h1>Tài liệu môn Toán</h1>
-                <div class="material-item">
-                    <h3>Giải tích</h3>
-                    <a href="#" class="view-button">View Materials</a>
-                </div>
-                <div class="material-item">
-                    <h3>Hình học</h3>
-                    <a href="#" class="view-button">View Materials</a>
-                </div>
-                <div class="footer">
-                    <a href="#" class="back-button" onclick="backToSubjects()">Quay lại</a>
-                </div>
-            </div>
-
-            <div id="literature" class="material-section">
-                <h1>Tài liệu môn Văn</h1>
-                <div class="material-item">
-                    <h3>Thơ ca</h3>
-                    <a href="#" class="view-button">View Materials</a>
-                </div>
-                <div class="footer">
-                    <a href="#" class="back-button" onclick="backToSubjects()">Quay lại</a>
-                </div>
-            </div>
-
-            <div id="english" class="material-section">
-                <h1>Tài liệu môn Anh</h1>
-                <div class="material-item">
-                    <h3>Ngữ pháp</h3>
-                    <a href="#" class="view-button">View Materials</a>
-                </div>
-                <div class="footer">
-                    <a href="#" class="back-button" onclick="backToSubjects()">Quay lại</a>
-                </div>
-            </div>
-
-            <div id="history" class="material-section">
-                <h1>Tài liệu môn Sử</h1>
-                <div class="material-item">
-                    <h3>Lịch sử Việt Nam</h3>
-                    <a href="#" class="view-button">View Materials</a>
-                </div>
-                <div class="footer">
-                    <a href="#" class="back-button" onclick="backToSubjects()">Quay lại</a>
-                </div>
-            </div>
-
-            <div id="geography" class="material-section">
-                <h1>Tài liệu môn Địa</h1>
-                <div class="material-item">
-                    <h3>Địa lý tự nhiên</h3>
-                    <a href="#" class="view-button">View Materials</a>
-                </div>
-                <div class="footer">
-                    <a href="#" class="back-button" onclick="backToSubjects()">Quay lại</a>
-                </div>
-            </div>
-
-            <div id="gdcd" class="material-section">
-                <h1>Tài liệu môn GDCD</h1>
-                <div class="material-item">
-                    <h3>Giáo dục công dân</h3>
-                    <a href="#" class="view-button">View Materials</a>
-                </div>
-                <div class="footer">
-                    <a href="#" class="back-button" onclick="backToSubjects()">Quay lại</a>
-                </div>
-            </div>
-
-            <div id="physics" class="material-section">
-                <h1>Tài liệu môn Lý</h1>
-                <div class="material-item">
-                    <h3>Cơ học</h3>
-                    <a href="#" class="view-button">View Materials</a>
-                </div>
-                <div class="footer">
-                    <a href="#" class="back-button" onclick="backToSubjects()">Quay lại</a>
-                </div>
-            </div>
-
-            <div id="chemistry" class="material-section">
-                <h1>Tài liệu môn Hóa</h1>
-                <div class="material-item">
-                    <h3>Hóa hữu cơ</h3>
-                    <a href="#" class="view-button">View Materials</a>
-                </div>
-                <div class="footer">
-                    <a href="#" class="back-button" onclick="backToSubjects()">Quay lại</a>
-                </div>
-            </div>
+            <!-- Nội dung sẽ được ẩn -->
         </div>
     </div>
 
@@ -227,23 +148,6 @@
 
             // Thêm lớp active cho liên kết đã chọn
             element.classList.add('active');
-        }
-
-        function backToSubjects() {
-            // Ẩn tất cả các phần tài liệu
-            document.querySelectorAll('.material-section').forEach(function (el) {
-                el.style.display = 'none';
-            });
-
-            // Hiện môn học đầu tiên (Toán)
-            document.getElementById('math').style.display = 'block';
-
-            // Đặt lại lớp active cho liên kết đầu tiên
-            document.querySelectorAll('.subjects-sidebar ul li a').forEach(function (link) {
-                link.classList.remove('active');
-            });
-            document.querySelector('.subjects-sidebar ul li a.active').classList.remove('active');
-            document.querySelector('.subjects-sidebar ul li a').classList.add('active');
         }
     </script>
 </body>
