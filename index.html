@@ -3,89 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tài liệu học tập</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h2, h3 {
-            color: #333;
-        }
-        .subject {
-            margin-bottom: 30px;
-        }
-        .materials ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .materials ul li {
-            margin: 10px 0;
-        }
-        .materials ul li a {
-            text-decoration: none;
-            color: #007bff;
-        }
-        .materials ul li a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>Document Sharing</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Hiển thị tài liệu cho môn Toán học -->
-    <div class="subject">
-        <h2>Môn học: Toán học</h2>
-        <div class="materials">
-            <!-- Bài giảng -->
-            <h3>Bài giảng</h3>
+    <div class="container">
+        <div class="lessons-sidebar">
+            <h2>Available Materials</h2>
             <ul>
-                <li><a href="uploads/lecture1.pdf" target="_blank">Bài giảng 1 - Giới thiệu về Toán học</a></li>
-                <li><a href="uploads/lecture2.pdf" target="_blank">Bài giảng 2 - Đại số tuyến tính</a></li>
+                <li><a href="#lectureMaterials" class="active">Bài giảng</a></li>
+                <li><a href="#exerciseMaterials">Bài tập</a></li>
+                <li><a href="#referenceMaterials">Tài liệu tham khảo</a></li>
             </ul>
+        </div>
 
-            <!-- Bài tập -->
-            <h3>Bài tập</h3>
-            <ul>
-                <li><a href="uploads/exercise1.pdf" target="_blank">Bài tập 1 - Hệ phương trình</a></li>
-                <li><a href="uploads/exercise2.pdf" target="_blank">Bài tập 2 - Ma trận</a></li>
-            </ul>
+        <div class="material-content">
+            <h1>Bài giảng</h1>
+            <div id="lectureMaterials">
+                <div class="material-item">
+                    <h3>All about Django Python</h3>
+                    <a href="#" class="view-button">View Materials</a>
+                </div>
+                <div class="material-item">
+                    <h3>Java Mock Project</h3>
+                    <a href="#" class="view-button">View Materials</a>
+                </div>
+            </div>
 
-            <!-- Tài liệu tham khảo -->
-            <h3>Tài liệu tham khảo</h3>
-            <ul>
-                <li><a href="uploads/reference1.pdf" target="_blank">Tài liệu tham khảo - Phương pháp giải toán</a></li>
-                <li><a href="uploads/reference2.pdf" target="_blank">Tài liệu tham khảo - Lý thuyết ma trận</a></li>
-            </ul>
+            <h1 id="exerciseMaterials">Bài tập</h1>
+            <div class="material-item">
+                <h3>Python Exercises</h3>
+                <a href="#" class="view-button">View Materials</a>
+            </div>
+
+            <h1 id="referenceMaterials">Tài liệu tham khảo</h1>
+            <div class="material-item">
+                <h3>Java Programming Language</h3>
+                <a href="#" class="view-button">View Materials</a>
+            </div>
+            <div class="material-item">
+                <h3>Hibernate Framework</h3>
+                <a href="#" class="view-button">View Materials</a>
+            </div>
+            <div class="material-item">
+                <h3>Java Spring Framework</h3>
+                <a href="#" class="view-button">View Materials</a>
+            </div>
         </div>
     </div>
 
-    <!-- Hiển thị tài liệu cho môn Vật lý -->
-    <div class="subject">
-        <h2>Môn học: Vật lý</h2>
-        <div class="materials">
-            <!-- Bài giảng -->
-            <h3>Bài giảng</h3>
-            <ul>
-                <li><a href="uploads/physics_lecture1.pdf" target="_blank">Bài giảng 1 - Cơ học lượng tử</a></li>
-                <li><a href="uploads/physics_lecture2.pdf" target="_blank">Bài giảng 2 - Điện động lực học</a></li>
-            </ul>
-
-            <!-- Bài tập -->
-            <h3>Bài tập</h3>
-            <ul>
-                <li><a href="uploads/physics_exercise1.pdf" target="_blank">Bài tập 1 - Bài toán dao động</a></li>
-                <li><a href="uploads/physics_exercise2.pdf" target="_blank">Bài tập 2 - Điện từ trường</a></li>
-            </ul>
-
-            <!-- Tài liệu tham khảo -->
-            <h3>Tài liệu tham khảo</h3>
-            <ul>
-                <li><a href="uploads/physics_reference1.pdf" target="_blank">Tài liệu tham khảo - Lý thuyết cơ học</a></li>
-                <li><a href="uploads/physics_reference2.pdf" target="_blank">Tài liệu tham khảo - Sóng điện từ</a></li>
-            </ul>
-        </div>
+    <div class="footer">
+        <a href="#" class="back-button">Back to list</a>
     </div>
-
 </body>
 </html>
