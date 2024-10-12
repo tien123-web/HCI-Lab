@@ -3,73 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 10 Subjects</title>
+    <title>Môn học lớp 10</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-
-        .container {
-            display: flex;
-            margin: 20px;
-        }
-
-        .subjects-sidebar {
-            flex: 1; /* Chiếm toàn bộ không gian bên trái */
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .subjects-sidebar h2 {
-            margin-top: 0;
-        }
-
-        .subjects-sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .subjects-sidebar ul li {
-            margin-bottom: 30px; /* Khoảng cách giữa các mục lớn hơn */
-            text-align: center; /* Căn giữa chữ */
-        }
-
-        .subjects-sidebar ul li a {
-            text-decoration: none;
-            color: #333;
-            padding: 10px;
-            display: block;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        .subjects-sidebar ul li a:hover {
-            background-color: #eaeaea;
-        }
-
-        .subjects-sidebar ul li a.active {
-            background-color: #007bff;
-            color: white;
-        }
-
-        .book-icon {
-            display: block;
-            margin: 10px auto; /* Căn giữa icon */
-            width: 50px; /* Độ rộng icon */
-            height: 50px; /* Độ cao icon */
-        }
-
-        /* Ẩn nội dung bên phải */
-        .material-content {
-            display: none; /* Ẩn nội dung bên phải */
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -78,49 +13,49 @@
             <ul>
                 <li>
                     <a href="#" class="button active" onclick="showSubject('math', this)">
-                        <img src="book-icon.png" alt="Toán" class="book-icon"> <!-- Đường dẫn đến icon quyển sách -->
+                        <span class="book-icon">📖</span>
                         Toán
                     </a>
                 </li>
                 <li>
                     <a href="#" class="button" onclick="showSubject('literature', this)">
-                        <img src="book-icon.png" alt="Văn" class="book-icon">
+                        <span class="book-icon">📖</span>
                         Văn
                     </a>
                 </li>
                 <li>
                     <a href="#" class="button" onclick="showSubject('english', this)">
-                        <img src="book-icon.png" alt="Anh" class="book-icon">
+                        <span class="book-icon">📖</span>
                         Anh
                     </a>
                 </li>
                 <li>
                     <a href="#" class="button" onclick="showSubject('history', this)">
-                        <img src="book-icon.png" alt="Sử" class="book-icon">
+                        <span class="book-icon">📖</span>
                         Sử
                     </a>
                 </li>
                 <li>
                     <a href="#" class="button" onclick="showSubject('geography', this)">
-                        <img src="book-icon.png" alt="Địa" class="book-icon">
+                        <span class="book-icon">📖</span>
                         Địa
                     </a>
                 </li>
                 <li>
                     <a href="#" class="button" onclick="showSubject('gdcd', this)">
-                        <img src="book-icon.png" alt="GDCD" class="book-icon">
+                        <span class="book-icon">📖</span>
                         GDCD
                     </a>
                 </li>
                 <li>
                     <a href="#" class="button" onclick="showSubject('physics', this)">
-                        <img src="book-icon.png" alt="Lý" class="book-icon">
+                        <span class="book-icon">📖</span>
                         Lý
                     </a>
                 </li>
                 <li>
                     <a href="#" class="button" onclick="showSubject('chemistry', this)">
-                        <img src="book-icon.png" alt="Hóa" class="book-icon">
+                        <span class="book-icon">📖</span>
                         Hóa
                     </a>
                 </li>
