@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 10 Subjects and Document Sharing</title>
+    <title>Class 10 Subjects</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -23,16 +23,18 @@
         </div>
 
         <div class="material-content">
-            <!-- Tài liệu môn học -->
             <div id="math" class="material-section">
                 <h1>Tài liệu môn Toán</h1>
                 <div class="material-item">
                     <h3>Giải tích</h3>
-                    <a href="#" class="view-button" onclick="showDocument('lecture', this)">View Materials</a>
+                    <a href="#" class="view-button">View Materials</a>
                 </div>
                 <div class="material-item">
                     <h3>Hình học</h3>
-                    <a href="#" class="view-button" onclick="showDocument('lecture', this)">View Materials</a>
+                    <a href="#" class="view-button">View Materials</a>
+                </div>
+                <div class="footer">
+                    <a href="#" class="back-button" onclick="backToSubjects()">Quay lại</a>
                 </div>
             </div>
 
@@ -40,7 +42,10 @@
                 <h1>Tài liệu môn Văn</h1>
                 <div class="material-item">
                     <h3>Thơ ca</h3>
-                    <a href="#" class="view-button" onclick="showDocument('lecture', this)">View Materials</a>
+                    <a href="#" class="view-button">View Materials</a>
+                </div>
+                <div class="footer">
+                    <a href="#" class="back-button" onclick="backToSubjects()">Quay lại</a>
                 </div>
             </div>
 
@@ -48,7 +53,10 @@
                 <h1>Tài liệu môn Anh</h1>
                 <div class="material-item">
                     <h3>Ngữ pháp</h3>
-                    <a href="#" class="view-button" onclick="showDocument('lecture', this)">View Materials</a>
+                    <a href="#" class="view-button">View Materials</a>
+                </div>
+                <div class="footer">
+                    <a href="#" class="back-button" onclick="backToSubjects()">Quay lại</a>
                 </div>
             </div>
 
@@ -56,7 +64,10 @@
                 <h1>Tài liệu môn Sử</h1>
                 <div class="material-item">
                     <h3>Lịch sử Việt Nam</h3>
-                    <a href="#" class="view-button" onclick="showDocument('lecture', this)">View Materials</a>
+                    <a href="#" class="view-button">View Materials</a>
+                </div>
+                <div class="footer">
+                    <a href="#" class="back-button" onclick="backToSubjects()">Quay lại</a>
                 </div>
             </div>
 
@@ -64,7 +75,10 @@
                 <h1>Tài liệu môn Địa</h1>
                 <div class="material-item">
                     <h3>Địa lý tự nhiên</h3>
-                    <a href="#" class="view-button" onclick="showDocument('lecture', this)">View Materials</a>
+                    <a href="#" class="view-button">View Materials</a>
+                </div>
+                <div class="footer">
+                    <a href="#" class="back-button" onclick="backToSubjects()">Quay lại</a>
                 </div>
             </div>
 
@@ -72,7 +86,10 @@
                 <h1>Tài liệu môn GDCD</h1>
                 <div class="material-item">
                     <h3>Giáo dục công dân</h3>
-                    <a href="#" class="view-button" onclick="showDocument('lecture', this)">View Materials</a>
+                    <a href="#" class="view-button">View Materials</a>
+                </div>
+                <div class="footer">
+                    <a href="#" class="back-button" onclick="backToSubjects()">Quay lại</a>
                 </div>
             </div>
 
@@ -80,7 +97,10 @@
                 <h1>Tài liệu môn Lý</h1>
                 <div class="material-item">
                     <h3>Cơ học</h3>
-                    <a href="#" class="view-button" onclick="showDocument('lecture', this)">View Materials</a>
+                    <a href="#" class="view-button">View Materials</a>
+                </div>
+                <div class="footer">
+                    <a href="#" class="back-button" onclick="backToSubjects()">Quay lại</a>
                 </div>
             </div>
 
@@ -88,64 +108,13 @@
                 <h1>Tài liệu môn Hóa</h1>
                 <div class="material-item">
                     <h3>Hóa hữu cơ</h3>
-                    <a href="#" class="view-button" onclick="showDocument('lecture', this)">View Materials</a>
+                    <a href="#" class="view-button">View Materials</a>
                 </div>
-            </div>
-
-            <!-- Phần tài liệu chia sẻ -->
-            <div id="document-sharing" class="material-section" style="display: none;">
-                <div class="lessons-sidebar">
-                    <h2>Tài liệu có sẵn</h2>
-                    <ul>
-                        <li><a href="#" class="button active" onclick="showSection('lecture', this)">Bài giảng</a></li>
-                        <li><a href="#" class="button" onclick="showSection('exercise', this)">Bài tập</a></li>
-                        <li><a href="#" class="button" onclick="showSection('reference', this)">Tài liệu tham khảo</a></li>
-                    </ul>
-                </div>
-
-                <div class="lesson-content">
-                    <div id="lecture" class="lesson-section">
-                        <h1>Bài giảng</h1>
-                        <div class="material-item">
-                            <h3>All about Django Python</h3>
-                            <a href="#" class="view-button">View Materials</a>
-                        </div>
-                        <div class="material-item">
-                            <h3>Java Mock Project</h3>
-                            <a href="#" class="view-button">View Materials</a>
-                        </div>
-                    </div>
-
-                    <div id="exercise" class="lesson-section" style="display: none;">
-                        <h1>Bài tập</h1>
-                        <div class="material-item">
-                            <h3>Python Exercises</h3>
-                            <a href="#" class="view-button">View Materials</a>
-                        </div>
-                    </div>
-
-                    <div id="reference" class="lesson-section" style="display: none;">
-                        <h1>Tài liệu tham khảo</h1>
-                        <div class="material-item">
-                            <h3>Java Programming Language</h3>
-                            <a href="#" class="view-button">View Materials</a>
-                        </div>
-                        <div class="material-item">
-                            <h3>Hibernate Framework</h3>
-                            <a href="#" class="view-button">View Materials</a>
-                        </div>
-                        <div class="material-item">
-                            <h3>Java Spring Framework</h3>
-                            <a href="#" class="view-button">View Materials</a>
-                        </div>
-                    </div>
+                <div class="footer">
+                    <a href="#" class="back-button" onclick="backToSubjects()">Quay lại</a>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="footer">
-        <a href="#" class="back-button" onclick="backToSubjects()">Quay lại môn học</a>
     </div>
 
     <script>
@@ -156,26 +125,9 @@
             });
             // Hiện phần tài liệu của môn học đã chọn
             document.getElementById(subject).style.display = 'block';
-
+            
             // Xóa lớp active khỏi tất cả các liên kết
             document.querySelectorAll('.subjects-sidebar ul li a').forEach(function (link) {
-                link.classList.remove('active');
-            });
-
-            // Thêm lớp active cho liên kết đã chọn
-            element.classList.add('active');
-        }
-
-        function showDocument(section, element) {
-            // Ẩn tất cả các phần
-            document.querySelectorAll('.lesson-section').forEach(function (el) {
-                el.style.display = 'none';
-            });
-            // Hiện phần tài liệu được chọn
-            document.getElementById(section).style.display = 'block';
-
-            // Xóa lớp active khỏi tất cả các liên kết
-            document.querySelectorAll('.lessons-sidebar ul li a').forEach(function (link) {
                 link.classList.remove('active');
             });
 
@@ -188,10 +140,16 @@
             document.querySelectorAll('.material-section').forEach(function (el) {
                 el.style.display = 'none';
             });
-            // Hiện sidebar môn học
-            document.querySelector('.subjects-sidebar').style.display = 'block';
-            // Hiện phần chọn môn học
-            document.querySelector('.material-content').style.display = 'block';
+
+            // Hiện môn học đầu tiên (Toán)
+            document.getElementById('math').style.display = 'block';
+
+            // Đặt lại lớp active cho liên kết đầu tiên
+            document.querySelectorAll('.subjects-sidebar ul li a').forEach(function (link) {
+                link.classList.remove('active');
+            });
+            document.querySelector('.subjects-sidebar ul li a.active').classList.remove('active');
+            document.querySelector('.subjects-sidebar ul li a').classList.add('active');
         }
     </script>
 </body>
