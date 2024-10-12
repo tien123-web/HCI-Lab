@@ -1,78 +1,139 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang GitHub Pages Đơn Giản</title>
+    <title>Chia sẻ tài liệu học tập</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 20px;
+            margin: 20px;
         }
-        h1 {
-            text-align: center;
+        h2, h3 {
             color: #333;
         }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+        .subject, .upload-section {
+            margin-bottom: 30px;
         }
-        a {
-            color: #007BFF;
-            text-decoration: none;
+        .materials ul {
+            list-style-type: none;
+            padding: 0;
         }
-        a:hover {
-            text-decoration: underline;
+        .materials ul li {
+            margin: 5px 0;
+        }
+        .upload-section {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .upload-section label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .upload-section select, .upload-section input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        .upload-section button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .upload-section button:hover {
+            background-color: #45a049;
         }
     </style>
-    <style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-</style>
 </head>
 <body>
-    <div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#lab">Lab</a>
-</div>
-    <div class="container">
-        <h1>Chào Mừng Đến Với GitHub Pages!</h1>
-        <p>Đây là một trang web đơn giản được tạo bằng HTML.</p>
-        <p>Hãy <a href="https://github.com" target="_blank">khám phá GitHub</a> để tìm hiểu thêm!</p>
-        <img src="https://png.pngtree.com/thumb_back/fh260/background/20230516/pngtree-cute-wallpapers-cats-wallpapers-hd-4k-wallpapers-desktop-wallpapers-hd-image_2562853.jpg" alt="Meo Meo" width="600px">
+
+    <!-- Hiển thị tài liệu -->
+    <div class="subject">
+        <h2>Môn học: Toán học</h2>
+        <div class="materials">
+            <!-- Bài giảng -->
+            <h3>Bài giảng</h3>
+            <ul id="lecture-list">
+                <!-- Tài liệu sẽ được thêm vào đây -->
+            </ul>
+
+            <!-- Bài tập -->
+            <h3>Bài tập</h3>
+            <ul id="exercise-list">
+                <!-- Tài liệu sẽ được thêm vào đây -->
+            </ul>
+
+            <!-- Tài liệu tham khảo -->
+            <h3>Tài liệu tham khảo</h3>
+            <ul id="reference-list">
+                <!-- Tài liệu sẽ được thêm vào đây -->
+            </ul>
+        </div>
     </div>
+
+    <!-- Form chia sẻ tài liệu -->
+    <div class="upload-section">
+        <h2>Chia sẻ tài liệu</h2>
+        <form id="upload-form">
+            <!-- Chọn môn học -->
+            <label for="subject">Chọn môn học:</label>
+            <select id="subject">
+                <option value="math">Toán học</option>
+                <option value="physics">Vật lý</option>
+                <option value="chemistry">Hóa học</option>
+            </select>
+
+            <!-- Chọn loại tài liệu -->
+            <label for="type">Loại tài liệu:</label>
+            <select id="type">
+                <option value="lecture">Bài giảng</option>
+                <option value="exercise">Bài tập</option>
+                <option value="reference">Tài liệu tham khảo</option>
+            </select>
+
+            <!-- Chọn file -->
+            <label for="file">Chọn tài liệu:</label>
+            <input type="file" id="file" />
+
+            <!-- Nút tải lên -->
+            <button type="button" onclick="uploadFile()">Chia sẻ</button>
+        </form>
+    </div>
+
+    <script>
+        function uploadFile() {
+            // Lấy dữ liệu từ form
+            const subject = document.getElementById('subject').value;
+            const type = document.getElementById('type').value;
+            const file = document.getElementById('file').files[0];
+
+            // Kiểm tra nếu file tồn tại
+            if (file) {
+                alert(`Tài liệu "${file.name}" được chia sẻ thành công cho môn học ${subject}`);
+
+                // Xác định danh sách tài liệu cần thêm vào (theo loại tài liệu)
+                let list;
+                if (type === 'lecture') {
+                    list = document.getElementById('lecture-list');
+                } else if (type === 'exercise') {
+                    list = document.getElementById('exercise-list');
+                } else {
+                    list = document.getElementById('reference-list');
+                }
+
+                // Tạo một thẻ li mới để hiển thị tài liệu
+                const newFile = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#';  // Đường dẫn tới file tài liệu (sau khi upload lên server)
+                link.textContent = file.name;
+                newFile.appendChild(link);
+                list.appendChild(newFile);
+            }
+        }
+    </script>
 </body>
 </html>
