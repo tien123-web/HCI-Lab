@@ -28,8 +28,13 @@ body {
 
 .button-grid {
     display: flex; /* Sử dụng flex để sắp xếp các nút */
-    flex-wrap: wrap; /* Cho phép các nút quấn quanh */
-    justify-content: center; /* Căn giữa */
+    flex-direction: column; /* Sắp xếp các hàng theo cột */
+    gap: 10px; /* Khoảng cách giữa các hàng */
+}
+
+.button-row {
+    display: flex; /* Sử dụng flex để sắp xếp các nút trong hàng */
+    justify-content: center; /* Căn giữa hàng */
     gap: 10px; /* Khoảng cách giữa các nút */
 }
 
