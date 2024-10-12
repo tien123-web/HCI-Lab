@@ -5,6 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class 10 Subjects</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            display: flex;
+            margin: 20px;
+        }
+
+        .subjects-sidebar {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+        }
+
+        .subjects-sidebar h2 {
+            margin-top: 0;
+        }
+
+        .subjects-sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .subjects-sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .subjects-sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            display: block;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .subjects-sidebar ul li a:hover {
+            background-color: #eaeaea;
+        }
+
+        .subjects-sidebar ul li a.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .material-content {
+            flex: 3;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .material-section {
+            display: none;
+        }
+
+        .material-section h1 {
+            margin-top: 0;
+        }
+
+        .material-item {
+            margin-bottom: 15px;
+        }
+
+        .material-item h3 {
+            margin: 0;
+        }
+
+        .view-button, .back-button {
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .view-button:hover, .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -23,7 +117,7 @@
         </div>
 
         <div class="material-content">
-            <div id="math" class="material-section">
+            <div id="math" class="material-section" style="display: block;">
                 <h1>Tài liệu môn Toán</h1>
                 <div class="material-item">
                     <h3>Giải tích</h3>
@@ -38,7 +132,7 @@
                 </div>
             </div>
 
-            <div id="literature" class="material-section" style="display: none;">
+            <div id="literature" class="material-section">
                 <h1>Tài liệu môn Văn</h1>
                 <div class="material-item">
                     <h3>Thơ ca</h3>
@@ -49,7 +143,7 @@
                 </div>
             </div>
 
-            <div id="english" class="material-section" style="display: none;">
+            <div id="english" class="material-section">
                 <h1>Tài liệu môn Anh</h1>
                 <div class="material-item">
                     <h3>Ngữ pháp</h3>
@@ -60,7 +154,7 @@
                 </div>
             </div>
 
-            <div id="history" class="material-section" style="display: none;">
+            <div id="history" class="material-section">
                 <h1>Tài liệu môn Sử</h1>
                 <div class="material-item">
                     <h3>Lịch sử Việt Nam</h3>
@@ -71,7 +165,7 @@
                 </div>
             </div>
 
-            <div id="geography" class="material-section" style="display: none;">
+            <div id="geography" class="material-section">
                 <h1>Tài liệu môn Địa</h1>
                 <div class="material-item">
                     <h3>Địa lý tự nhiên</h3>
@@ -82,7 +176,7 @@
                 </div>
             </div>
 
-            <div id="gdcd" class="material-section" style="display: none;">
+            <div id="gdcd" class="material-section">
                 <h1>Tài liệu môn GDCD</h1>
                 <div class="material-item">
                     <h3>Giáo dục công dân</h3>
@@ -93,7 +187,7 @@
                 </div>
             </div>
 
-            <div id="physics" class="material-section" style="display: none;">
+            <div id="physics" class="material-section">
                 <h1>Tài liệu môn Lý</h1>
                 <div class="material-item">
                     <h3>Cơ học</h3>
@@ -104,7 +198,7 @@
                 </div>
             </div>
 
-            <div id="chemistry" class="material-section" style="display: none;">
+            <div id="chemistry" class="material-section">
                 <h1>Tài liệu môn Hóa</h1>
                 <div class="material-item">
                     <h3>Hóa hữu cơ</h3>
