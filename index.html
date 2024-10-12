@@ -10,56 +10,40 @@
     <div class="container">
         <div class="subjects-sidebar">
             <h2>Môn học lớp 10</h2>
-            <ul>
-                <li>
-                    <a href="#" class="button active" onclick="showSubject('math', this)">
-                        <span class="book-icon">📖</span>
-                        Toán
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="button" onclick="showSubject('literature', this)">
-                        <span class="book-icon">📖</span>
-                        Văn
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="button" onclick="showSubject('english', this)">
-                        <span class="book-icon">📖</span>
-                        Anh
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="button" onclick="showSubject('history', this)">
-                        <span class="book-icon">📖</span>
-                        Sử
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="button" onclick="showSubject('geography', this)">
-                        <span class="book-icon">📖</span>
-                        Địa
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="button" onclick="showSubject('gdcd', this)">
-                        <span class="book-icon">📖</span>
-                        GDCD
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="button" onclick="showSubject('physics', this)">
-                        <span class="book-icon">📖</span>
-                        Lý
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="button" onclick="showSubject('chemistry', this)">
-                        <span class="book-icon">📖</span>
-                        Hóa
-                    </a>
-                </li>
-            </ul>
+            <div class="button-grid">
+                <a href="#" class="button active" onclick="showSubject('math', this)">
+                    <span class="book-icon">📖</span>
+                    Toán
+                </a>
+                <a href="#" class="button" onclick="showSubject('literature', this)">
+                    <span class="book-icon">📖</span>
+                    Văn
+                </a>
+                <a href="#" class="button" onclick="showSubject('english', this)">
+                    <span class="book-icon">📖</span>
+                    Anh
+                </a>
+                <a href="#" class="button" onclick="showSubject('history', this)">
+                    <span class="book-icon">📖</span>
+                    Sử
+                </a>
+                <a href="#" class="button" onclick="showSubject('geography', this)">
+                    <span class="book-icon">📖</span>
+                    Địa
+                </a>
+                <a href="#" class="button" onclick="showSubject('gdcd', this)">
+                    <span class="book-icon">📖</span>
+                    GDCD
+                </a>
+                <a href="#" class="button" onclick="showSubject('physics', this)">
+                    <span class="book-icon">📖</span>
+                    Lý
+                </a>
+                <a href="#" class="button" onclick="showSubject('chemistry', this)">
+                    <span class="book-icon">📖</span>
+                    Hóa
+                </a>
+            </div>
         </div>
 
         <div class="material-content">
@@ -77,7 +61,7 @@
             document.getElementById(subject).style.display = 'block';
             
             // Xóa lớp active khỏi tất cả các liên kết
-            document.querySelectorAll('.subjects-sidebar ul li a').forEach(function (link) {
+            document.querySelectorAll('.subjects-sidebar .button').forEach(function (link) {
                 link.classList.remove('active');
             });
 
