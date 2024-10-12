@@ -1,0 +1,73 @@
+/* Đặt kiểu cho toàn bộ body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f8f9fa;
+}
+
+/* Tiêu đề của môn học */
+h2, h3 {
+    color: #333;
+}
+
+/* Container của mỗi môn học */
+.subject {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header môn học */
+.subject h2 {
+    color: #007bff;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* Bố cục các phần tài liệu */
+.materials h3 {
+    color: #495057;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+/* Kiểu cho danh sách tài liệu */
+.materials ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Kiểu cho từng tài liệu */
+.materials ul li {
+    margin: 10px 0;
+}
+
+/* Liên kết tài liệu */
+.materials ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Hiệu ứng hover cho liên kết */
+.materials ul li a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Kiểu cho phần không có tài liệu */
+.no-docs {
+    font-style: italic;
+    color: #6c757d;
+}
+
+/* Kiểu cho footer */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #6c757d;
+    font-size: 0.9em;
+}
