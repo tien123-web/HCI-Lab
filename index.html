@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chia sẻ tài liệu học tập</title>
+    <title>Tài liệu học tập</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,7 +12,7 @@
         h2, h3 {
             color: #333;
         }
-        .subject, .upload-section {
+        .subject {
             margin-bottom: 30px;
         }
         .materials ul {
@@ -20,120 +20,72 @@
             padding: 0;
         }
         .materials ul li {
-            margin: 5px 0;
+            margin: 10px 0;
         }
-        .upload-section {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .materials ul li a {
+            text-decoration: none;
+            color: #007bff;
         }
-        .upload-section label {
-            display: block;
-            margin: 10px 0 5px;
-        }
-        .upload-section select, .upload-section input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-        }
-        .upload-section button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-        }
-        .upload-section button:hover {
-            background-color: #45a049;
+        .materials ul li a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <!-- Hiển thị tài liệu -->
+    <!-- Hiển thị tài liệu cho môn Toán học -->
     <div class="subject">
         <h2>Môn học: Toán học</h2>
         <div class="materials">
             <!-- Bài giảng -->
             <h3>Bài giảng</h3>
-            <ul id="lecture-list">
-                <!-- Tài liệu sẽ được thêm vào đây -->
+            <ul>
+                <li><a href="uploads/lecture1.pdf" target="_blank">Bài giảng 1 - Giới thiệu về Toán học</a></li>
+                <li><a href="uploads/lecture2.pdf" target="_blank">Bài giảng 2 - Đại số tuyến tính</a></li>
             </ul>
 
             <!-- Bài tập -->
             <h3>Bài tập</h3>
-            <ul id="exercise-list">
-                <!-- Tài liệu sẽ được thêm vào đây -->
+            <ul>
+                <li><a href="uploads/exercise1.pdf" target="_blank">Bài tập 1 - Hệ phương trình</a></li>
+                <li><a href="uploads/exercise2.pdf" target="_blank">Bài tập 2 - Ma trận</a></li>
             </ul>
 
             <!-- Tài liệu tham khảo -->
             <h3>Tài liệu tham khảo</h3>
-            <ul id="reference-list">
-                <!-- Tài liệu sẽ được thêm vào đây -->
+            <ul>
+                <li><a href="uploads/reference1.pdf" target="_blank">Tài liệu tham khảo - Phương pháp giải toán</a></li>
+                <li><a href="uploads/reference2.pdf" target="_blank">Tài liệu tham khảo - Lý thuyết ma trận</a></li>
             </ul>
         </div>
     </div>
 
-    <!-- Form chia sẻ tài liệu -->
-    <div class="upload-section">
-        <h2>Chia sẻ tài liệu</h2>
-        <form id="upload-form">
-            <!-- Chọn môn học -->
-            <label for="subject">Chọn môn học:</label>
-            <select id="subject">
-                <option value="math">Toán học</option>
-                <option value="physics">Vật lý</option>
-                <option value="chemistry">Hóa học</option>
-            </select>
+    <!-- Hiển thị tài liệu cho môn Vật lý -->
+    <div class="subject">
+        <h2>Môn học: Vật lý</h2>
+        <div class="materials">
+            <!-- Bài giảng -->
+            <h3>Bài giảng</h3>
+            <ul>
+                <li><a href="uploads/physics_lecture1.pdf" target="_blank">Bài giảng 1 - Cơ học lượng tử</a></li>
+                <li><a href="uploads/physics_lecture2.pdf" target="_blank">Bài giảng 2 - Điện động lực học</a></li>
+            </ul>
 
-            <!-- Chọn loại tài liệu -->
-            <label for="type">Loại tài liệu:</label>
-            <select id="type">
-                <option value="lecture">Bài giảng</option>
-                <option value="exercise">Bài tập</option>
-                <option value="reference">Tài liệu tham khảo</option>
-            </select>
+            <!-- Bài tập -->
+            <h3>Bài tập</h3>
+            <ul>
+                <li><a href="uploads/physics_exercise1.pdf" target="_blank">Bài tập 1 - Bài toán dao động</a></li>
+                <li><a href="uploads/physics_exercise2.pdf" target="_blank">Bài tập 2 - Điện từ trường</a></li>
+            </ul>
 
-            <!-- Chọn file -->
-            <label for="file">Chọn tài liệu:</label>
-            <input type="file" id="file" />
-
-            <!-- Nút tải lên -->
-            <button type="button" onclick="uploadFile()">Chia sẻ</button>
-        </form>
+            <!-- Tài liệu tham khảo -->
+            <h3>Tài liệu tham khảo</h3>
+            <ul>
+                <li><a href="uploads/physics_reference1.pdf" target="_blank">Tài liệu tham khảo - Lý thuyết cơ học</a></li>
+                <li><a href="uploads/physics_reference2.pdf" target="_blank">Tài liệu tham khảo - Sóng điện từ</a></li>
+            </ul>
+        </div>
     </div>
 
-    <script>
-        function uploadFile() {
-            // Lấy dữ liệu từ form
-            const subject = document.getElementById('subject').value;
-            const type = document.getElementById('type').value;
-            const file = document.getElementById('file').files[0];
-
-            // Kiểm tra nếu file tồn tại
-            if (file) {
-                alert(`Tài liệu "${file.name}" được chia sẻ thành công cho môn học ${subject}`);
-
-                // Xác định danh sách tài liệu cần thêm vào (theo loại tài liệu)
-                let list;
-                if (type === 'lecture') {
-                    list = document.getElementById('lecture-list');
-                } else if (type === 'exercise') {
-                    list = document.getElementById('exercise-list');
-                } else {
-                    list = document.getElementById('reference-list');
-                }
-
-                // Tạo một thẻ li mới để hiển thị tài liệu
-                const newFile = document.createElement('li');
-                const link = document.createElement('a');
-                link.href = '#';  // Đường dẫn tới file tài liệu (sau khi upload lên server)
-                link.textContent = file.name;
-                newFile.appendChild(link);
-                list.appendChild(newFile);
-            }
-        }
-    </script>
 </body>
 </html>
