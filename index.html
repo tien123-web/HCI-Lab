@@ -11,9 +11,9 @@
         <div class="lessons-sidebar">
             <h2>Available Materials</h2>
             <ul>
-                <li><a href="#" class="active" onclick="showSection('lecture')">Bài giảng</a></li>
-                <li><a href="#" onclick="showSection('exercise')">Bài tập</a></li>
-                <li><a href="#" onclick="showSection('reference')">Tài liệu tham khảo</a></li>
+                <li><a href="#" class="active" onclick="showSection('lecture', this)">Bài giảng</a></li>
+                <li><a href="#" onclick="showSection('exercise', this)">Bài tập</a></li>
+                <li><a href="#" onclick="showSection('reference', this)">Tài liệu tham khảo</a></li>
             </ul>
         </div>
 
@@ -61,13 +61,21 @@
     </div>
 
     <script>
-        function showSection(section) {
+        function showSection(section, element) {
             // Ẩn tất cả các phần
-            document.querySelectorAll('.material-section').forEach(function (element) {
-                element.style.display = 'none';
+            document.querySelectorAll('.material-section').forEach(function (el) {
+                el.style.display = 'none';
             });
             // Hiện phần được chọn
             document.getElementById(section).style.display = 'block';
+            
+            // Xóa lớp active khỏi tất cả các liên kết
+            document.querySelectorAll('.lessons-sidebar ul li a').forEach(function (link) {
+                link.classList.remove('active');
+            });
+
+            // Thêm lớp active cho liên kết đã chọn
+            element.classList.add('active');
         }
     </script>
 </body>
