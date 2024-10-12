@@ -26,34 +26,30 @@ body {
     text-align: center; /* Căn giữa tiêu đề */
 }
 
-.subjects-sidebar ul {
-    list-style: none;
-    padding: 0;
+.button-grid {
+    display: grid; /* Sử dụng grid để sắp xếp các nút */
+    grid-template-columns: repeat(4, 1fr); /* 4 cột */
+    gap: 10px; /* Khoảng cách giữa các nút */
 }
 
-.subjects-sidebar ul li {
-    margin-bottom: 20px; /* Khoảng cách giữa các mục nhỏ hơn */
-    text-align: center; /* Căn giữa chữ */
-}
-
-.subjects-sidebar ul li a {
+.button {
     text-decoration: none;
     color: #333;
-    padding: 10px;
+    padding: 20px; /* Khoảng cách trong nút */
     display: flex;
     flex-direction: column; /* Sắp xếp icon và tên dưới nhau */
     align-items: center; /* Căn giữa nội dung */
     border-radius: 4px;
     transition: background-color 0.3s;
-    width: 80px; /* Đặt chiều rộng cho các nút */
-    margin: 0 auto; /* Căn giữa nút */
+    text-align: center; /* Căn giữa chữ */
+    background-color: #eaeaea; /* Màu nền mặc định */
 }
 
-.subjects-sidebar ul li a:hover {
-    background-color: #eaeaea;
+.button:hover {
+    background-color: #d3d3d3; /* Màu nền khi hover */
 }
 
-.subjects-sidebar ul li a.active {
+.button.active {
     background-color: #007bff;
     color: white;
 }
