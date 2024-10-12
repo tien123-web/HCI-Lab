@@ -9,32 +9,8 @@ include 'config.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tài liệu học tập</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h2, h3 {
-            color: #333;
-        }
-        .subject {
-            margin-bottom: 30px;
-        }
-        .materials ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .materials ul li {
-            margin: 10px 0;
-        }
-        .materials ul li a {
-            text-decoration: none;
-            color: #007bff;
-        }
-        .materials ul li a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <!-- Liên kết file CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -102,18 +78,23 @@ if ($subject_result->num_rows > 0) {
 
             echo "</div>";
         } else {
-            echo "<p>Chưa có tài liệu cho môn học này.</p>";
+            echo "<p class='no-docs'>Chưa có tài liệu cho môn học này.</p>";
         }
 
         echo "</div>";
     }
 } else {
-    echo "<p>Không có môn học nào.</p>";
+    echo "<p class='no-docs'>Không có môn học nào.</p>";
 }
 
 // Đóng kết nối cơ sở dữ liệu
 $conn->close();
 ?>
+
+<!-- Phần footer -->
+<footer>
+    <p>&copy; 2024 Hệ thống quản lý tài liệu học tập</p>
+</footer>
 
 </body>
 </html>
