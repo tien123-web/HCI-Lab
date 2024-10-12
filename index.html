@@ -3,80 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Môn học</title>
+    <title>Class 10 Subjects</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="subjects-sidebar">
-            <h2>Môn học</h2>
-            <div class="button-grid">
-                <div class="button-row">
-                    <a href="#" class="button" onclick="showSubject('math', this)">
-                        <span class="book-icon">📖</span>
-                        Toán
-                    </a>
-                    <a href="#" class="button" onclick="showSubject('literature', this)">
-                        <span class="book-icon">📖</span>
-                        Văn
-                    </a>
-                    <a href="#" class="button" onclick="showSubject('english', this)">
-                        <span class="book-icon">📖</span>
-                        Anh
-                    </a>
-                </div>
-                <div class="button-row">
-                    <a href="#" class="button" onclick="showSubject('physics', this)">
-                        <span class="book-icon">📖</span>
-                        Lý
-                    </a>
-                    <a href="#" class="button" onclick="showSubject('chemistry', this)">
-                        <span class="book-icon">📖</span>
-                        Hóa
-                    </a>
-                    <a href="#" class="button" onclick="showSubject('biology', this)">
-                        <span class="book-icon">📖</span>
-                        Sinh
-                    </a>
-                </div>
-                <div class="button-row">
-                    <a href="#" class="button" onclick="showSubject('history', this)">
-                        <span class="book-icon">📖</span>
-                        Sử
-                    </a>
-                    <a href="#" class="button" onclick="showSubject('geography', this)">
-                        <span class="book-icon">📖</span>
-                        Địa
-                    </a>
-                    <a href="#" class="button" onclick="showSubject('gdcd', this)">
-                        <span class="book-icon">📖</span>
-                        GDCD
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="material-content">
-            <!-- Nội dung sẽ được ẩn -->
+        <h2>Môn học lớp 10</h2>
+        <div class="subjects-container">
+            <a href="#" class="button" onclick="showSubject('math', this)">
+                <span class="book-icon">📖</span>
+                Toán
+            </a>
+            <a href="#" class="button" onclick="showSubject('literature', this)">
+                <span class="book-icon">📖</span>
+                Văn
+            </a>
+            <a href="#" class="button" onclick="showSubject('english', this)">
+                <span class="book-icon">📖</span>
+                Anh
+            </a>
+            <a href="#" class="button" onclick="showSubject('physics', this)">
+                <span class="book-icon">📖</span>
+                Lý
+            </a>
+            <a href="#" class="button" onclick="showSubject('chemistry', this)">
+                <span class="book-icon">📖</span>
+                Hóa
+            </a>
+            <a href="#" class="button" onclick="showSubject('biology', this)">
+                <span class="book-icon">📖</span>
+                Sinh
+            </a>
+            <a href="#" class="button" onclick="showSubject('history', this)">
+                <span class="book-icon">📖</span>
+                Sử
+            </a>
+            <a href="#" class="button" onclick="showSubject('geography', this)">
+                <span class="book-icon">📖</span>
+                Địa
+            </a>
+            <a href="#" class="button" onclick="showSubject('gdcd', this)">
+                <span class="book-icon">📖</span>
+                GDCD
+            </a>
         </div>
     </div>
 
     <script>
         function showSubject(subject, element) {
-            // Ẩn tất cả các phần tài liệu
-            document.querySelectorAll('.material-section').forEach(function (el) {
-                el.style.display = 'none';
-            });
-            // Hiện phần tài liệu của môn học đã chọn
-            document.getElementById(subject).style.display = 'block';
-            
-            // Xóa lớp active khỏi tất cả các liên kết
-            document.querySelectorAll('.subjects-sidebar .button').forEach(function (link) {
-                link.classList.remove('active');
-            });
-
-            // Thêm lớp active cho liên kết đã chọn
-            element.classList.add('active');
+            // Chức năng hiện phần tài liệu cho môn học
+            console.log(`Showing materials for: ${subject}`);
         }
     </script>
 </body>
