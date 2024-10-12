@@ -29,15 +29,16 @@ body {
 .button-grid {
     display: flex; /* Sử dụng flex để sắp xếp các nút */
     flex-wrap: wrap; /* Cho phép các nút quấn quanh */
-    justify-content: space-between; /* Căn giữa và phân bổ khoảng cách */
+    justify-content: center; /* Căn giữa */
+    gap: 10px; /* Khoảng cách giữa các nút */
 }
 
 .button {
     text-decoration: none;
     color: #333;
+    width: 80px; /* Chiều rộng cố định cho mỗi nút */
     padding: 10px; /* Khoảng cách trong nút */
-    flex: 1 0 30%; /* Tạo chiều rộng của nút */
-    margin: 5px; /* Khoảng cách giữa các nút */
+    border: 2px solid #007bff; /* Viền nút */
     border-radius: 4px;
     background-color: #eaeaea; /* Màu nền mặc định */
     text-align: center; /* Căn giữa chữ */
