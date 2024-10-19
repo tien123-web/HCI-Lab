@@ -57,11 +57,26 @@
             display: flex;
             flex-direction: column; /* Sắp xếp theo chiều dọc */
         }
-        .genre {
+        .tab {
+            display: flex; /* Sắp xếp các tab theo chiều ngang */
+            cursor: pointer;
             background-color: #e0e0e0;
-            margin: 10px 0; /* Khoảng cách giữa các mục */
+            margin-bottom: 10px;
             padding: 10px;
             border-radius: 5px; /* Bo góc */
+            justify-content: center; /* Căn giữa nội dung trong tab */
+        }
+        .tab-content {
+            display: none; /* Ẩn nội dung tab */
+            background-color: #d8d8d8;
+            padding: 20px;
+            border-radius: 5px; /* Bo góc */
+        }
+        .active {
+            background-color: #c0c0c0; /* Màu nền cho tab đang hoạt động */
+        }
+        .active-content {
+            display: block; /* Hiện nội dung của tab đang hoạt động */
         }
         h2 {
             margin: 0; /* Không có khoảng cách ở tiêu đề */
@@ -88,13 +103,82 @@
         </div>
         <div class="right">
             <h2>Các Thể Loại Phim</h2>
-            <div class="genre">Hài Hước</div>
-            <div class="genre">Phiêu Lưu</div>
-            <div class="genre">Kinh Dị</div>
-            <div class="genre">Hành Động</div>
-            <div class="genre">Tình Cảm</div>
-            <div class="genre">Khoa Học Viễn Tưởng</div>
+            <div class="tab" onclick="openTab(event, 'comedy')">Hài Hước</div>
+            <div class="tab" onclick="openTab(event, 'adventure')">Phiêu Lưu</div>
+            <div class="tab" onclick="openTab(event, 'horror')">Kinh Dị</div>
+            <div class="tab" onclick="openTab(event, 'action')">Hành Động</div>
+            <div class="tab" onclick="openTab(event, 'romance')">Tình Cảm</div>
+            <div class="tab" onclick="openTab(event, 'sci-fi')">Khoa Học Viễn Tưởng</div>
+
+            <div id="comedy" class="tab-content">
+                <h3>Danh Sách Phim Hài Hước</h3>
+                <ul>
+                    <li>Phim Hài 1</li>
+                    <li>Phim Hài 2</li>
+                    <li>Phim Hài 3</li>
+                </ul>
+            </div>
+            <div id="adventure" class="tab-content">
+                <h3>Danh Sách Phim Phiêu Lưu</h3>
+                <ul>
+                    <li>Phim Phiêu Lưu 1</li>
+                    <li>Phim Phiêu Lưu 2</li>
+                    <li>Phim Phiêu Lưu 3</li>
+                </ul>
+            </div>
+            <div id="horror" class="tab-content">
+                <h3>Danh Sách Phim Kinh Dị</h3>
+                <ul>
+                    <li>Phim Kinh Dị 1</li>
+                    <li>Phim Kinh Dị 2</li>
+                    <li>Phim Kinh Dị 3</li>
+                </ul>
+            </div>
+            <div id="action" class="tab-content">
+                <h3>Danh Sách Phim Hành Động</h3>
+                <ul>
+                    <li>Phim Hành Động 1</li>
+                    <li>Phim Hành Động 2</li>
+                    <li>Phim Hành Động 3</li>
+                </ul>
+            </div>
+            <div id="romance" class="tab-content">
+                <h3>Danh Sách Phim Tình Cảm</h3>
+                <ul>
+                    <li>Phim Tình Cảm 1</li>
+                    <li>Phim Tình Cảm 2</li>
+                    <li>Phim Tình Cảm 3</li>
+                </ul>
+            </div>
+            <div id="sci-fi" class="tab-content">
+                <h3>Danh Sách Phim Khoa Học Viễn Tưởng</h3>
+                <ul>
+                    <li>Phim Khoa Học Viễn Tưởng 1</li>
+                    <li>Phim Khoa Học Viễn Tưởng 2</li>
+                    <li>Phim Khoa Học Viễn Tưởng 3</li>
+                </ul>
+            </div>
         </div>
     </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            // Ẩn tất cả các tab content
+            var tabContents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active-content");
+            }
+
+            // Bỏ chọn tất cả các tab
+            var tabs = document.getElementsByClassName("tab");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+
+            // Hiện tab content hiện tại
+            document.getElementById(tabName).classList.add("active-content");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 </body>
 </html>
