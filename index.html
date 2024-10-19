@@ -10,34 +10,41 @@
             font-family: Arial, sans-serif;
         }
         .container {
-            display: grid; /* Sử dụng Grid để chia đôi */
-            grid-template-columns: 70% 30%; /* Tỷ lệ 70% và 30% */
+            display: flex; /* Sử dụng Flexbox để chia đôi */
             height: 100vh; /* Chiều cao 100% của cửa sổ */
         }
-        .left {
-            display: grid; /* Sử dụng Grid cho phần trái */
-            grid-template-rows: 10% 90%; /* Tỷ lệ 10% và 90% */
-        }
         .top {
+            flex: 1; /* Chiếm 10% chiều cao */
+            width: 100%; /* Chiếm toàn bộ chiều rộng */
             background-color: #f0f0f0;
             padding: 20px;
             box-sizing: border-box;
         }
+        .left {
+            flex: 7; /* Chiếm 70% chiều rộng */
+            display: flex;
+            flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+        }
         .bottom {
-            display: grid; /* Sử dụng Grid cho phần dưới */
-            grid-template-rows: 70% 30%; /* Tỷ lệ 70% và 30% */
+            flex: 9; /* Chiếm 90% chiều cao */
+            display: flex;
+            flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+            width: 100%; /* Chiếm toàn bộ chiều rộng */
         }
         .inner-top {
+            flex: 7; /* Chiếm 70% chiều cao của bottom */
             background-color: #d0d0d0;
             padding: 20px;
             box-sizing: border-box;
         }
         .inner-bottom {
+            flex: 3; /* Chiếm 30% chiều cao của bottom */
             background-color: #d8d8d8;
             padding: 20px;
             box-sizing: border-box;
         }
         .right {
+            flex: 3; /* Chiếm 30% chiều rộng */
             background-color: #c0c0c0;
             padding: 20px;
             box-sizing: border-box;
@@ -45,12 +52,12 @@
     </style>
 </head>
 <body>
+    <div class="top">
+        <h2>Phần Trên (10%)</h2>
+        <p>Nội dung ở đây...</p>
+    </div>
     <div class="container">
         <div class="left">
-            <div class="top">
-                <h2>Phần Trên (10%)</h2>
-                <p>Nội dung ở đây...</p>
-            </div>
             <div class="bottom">
                 <div class="inner-top">
                     <h2>Phần Giữa (70% của 90%)</h2>
