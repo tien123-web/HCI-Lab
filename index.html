@@ -5,36 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khung Hình 12 Ô</title>
     <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex; /* Sử dụng Flexbox để bố trí ngang */
+            justify-content: space-between; /* Phân phối không gian giữa các phần tử */
+            align-items: center; /* Căn giữa theo chiều dọc */
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #ccc;
+        }
         .grid-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr); /* 4 cột */
             gap: 10px; /* Khoảng cách giữa các ô */
             padding: 10px;
+            height: calc(100vh - 60px); /* Chiều cao của khung */
+            box-sizing: border-box; /* Bao gồm padding và border trong chiều cao */
         }
         .grid-item {
             border: 1px solid black;
-            height: 100px;
+            height: 100%; /* Chiếm toàn bộ chiều cao của khung */
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 16px;
         }
-        .header {
-            grid-column: span 4; /* Chiếm toàn bộ chiều rộng */
-            height: 50px; /* Chiều cao của tiêu đề */
-            background-color: #f0f0f0;
-            text-align: center;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
+    <div class="header">
+        <button onclick="alert('Chuyển đến trang chủ')">Home</button>
+        <h2 style="margin: 0;">Phân Đánh Giá 5 Sao</h2>
+        <p style="margin: 0;">Phân Tích Lũy Học</p>
+    </div>
     <div class="grid-container">
-        <div class="header">
-            <button onclick="alert('Chuyển đến trang chủ')">Home</button>
-            <h2>Phân Đánh Giá 5 Sao</h2>
-            <p>Phân Tích Lũy Học</p>
-        </div>
         <div class="grid-item">Ô 1</div>
         <div class="grid-item">Ô 2</div>
         <div class="grid-item">Ô 3</div>
