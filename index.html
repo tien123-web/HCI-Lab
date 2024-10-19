@@ -9,11 +9,12 @@
             margin: 0;
             font-family: Arial, sans-serif;
             height: 100vh; /* Chiều cao 100% của cửa sổ */
-            display: grid; /* Sử dụng Grid cho phần thân */
-            grid-template-rows: 10% 90%; /* Tỷ lệ 10% và 90% */
+            display: flex;
+            flex-direction: column;
         }
         .top {
-            grid-column: 1 / -1; /* Chiếm toàn bộ chiều rộng */
+            height: 10%; /* Chiều cao 10% */
+            width: 100%; /* Chiếm toàn bộ chiều rộng */
             background-color: #f0f0f0;
             padding: 20px;
             box-sizing: border-box;
@@ -22,32 +23,48 @@
             align-items: center;
         }
         .container {
-            display: grid; /* Sử dụng Grid để chia đôi */
-            grid-template-columns: 70% 30%; /* Tỷ lệ 70% và 30% */
-            height: 100%; /* Chiều cao 100% của phần còn lại */
+            display: flex; /* Sử dụng Flexbox để chia đôi */
+            flex: 1; /* Chiếm phần còn lại của chiều cao */
         }
         .left {
-            display: grid; /* Sử dụng Grid cho phần trái */
-            grid-template-rows: 90%; /* Tỷ lệ 90% */
+            flex: 7; /* Chiếm 70% chiều rộng */
+            display: flex;
+            flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+            justify-content: space-between; /* Tạo không gian giữa các phần tử */
         }
         .bottom {
-            display: grid; /* Sử dụng Grid cho phần dưới */
-            grid-template-rows: 80% 30%; /* Tỷ lệ 70% và 30% */
+            flex: 9; /* Chiếm 90% chiều cao */
+            display: flex;
+            flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
         }
         .inner-top {
+            flex: 7; /* Chiếm 70% chiều cao của bottom */
             background-color: #d0d0d0;
             padding: 20px;
             box-sizing: border-box;
         }
         .inner-bottom {
+            flex: 3; /* Chiếm 30% chiều cao của bottom */
             background-color: #d8d8d8;
             padding: 20px;
             box-sizing: border-box;
         }
         .right {
+            flex: 3; /* Chiếm 30% chiều rộng */
             background-color: #c0c0c0;
             padding: 20px;
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column; /* Sắp xếp theo chiều dọc */
+        }
+        .genre {
+            background-color: #e0e0e0;
+            margin: 10px 0; /* Khoảng cách giữa các mục */
+            padding: 10px;
+            border-radius: 5px; /* Bo góc */
+        }
+        h2 {
+            margin: 0; /* Không có khoảng cách ở tiêu đề */
         }
     </style>
 </head>
@@ -70,8 +87,13 @@
             </div>
         </div>
         <div class="right">
-            <h2>Phần Phải (30%)</h2>
-            <p>Nội dung ở đây...</p>
+            <h2>Các Thể Loại Phim</h2>
+            <div class="genre">Hài Hước</div>
+            <div class="genre">Phiêu Lưu</div>
+            <div class="genre">Kinh Dị</div>
+            <div class="genre">Hành Động</div>
+            <div class="genre">Tình Cảm</div>
+            <div class="genre">Khoa Học Viễn Tưởng</div>
         </div>
     </div>
 </body>
