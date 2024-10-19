@@ -1,47 +1,9 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-.container {
-    width: 90%; /* Chiều rộng của khung chứa */
-    max-width: 1200px; /* Giới hạn chiều rộng tối đa */
-    margin: auto;
-    padding: 20px;
-}
-
-h2 {
-    text-align: center; /* Canh giữa tiêu đề */
-}
-
-.subjects-container {
-    display: flex;
-    flex-wrap: wrap; /* Cho phép các nút xuống hàng */
-    justify-content: space-between; /* Căn giữa các nút */
-}
-
-.button {
-    background-color: #4CAF50; /* Màu nền */
-    color: white; /* Màu chữ */
-    padding: 20px; /* Khoảng cách bên trong */
-    text-align: center; /* Canh giữa nội dung */
-    margin: 10px; /* Khoảng cách giữa các nút */
-    flex: 1 0 30%; /* Chiều rộng tối thiểu là 30% */
-    border-radius: 5px; /* Bo tròn góc */
-    text-decoration: none; /* Bỏ gạch chân */
-    font-size: 1.5em; /* Kích thước chữ */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng cho nút */
-    transition: background-color 0.3s; /* Hiệu ứng chuyển màu khi hover */
-}
-
-.button:hover {
-    background-color: #45a049; /* Màu nền khi hover */
-}
-
-.book-icon {
-    display: block; /* Hiển thị biểu tượng trên một dòng */
-    font-size: 2em; /* Kích thước biểu tượng */
-    margin-bottom: 10px; /* Khoảng cách giữa biểu tượng và tên môn học */
+.course-content {
+    flex: 1;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-height: 600px;
+    overflow-y: auto;
 }
