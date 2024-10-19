@@ -16,7 +16,7 @@
         }
         .left {
             display: grid; /* Sử dụng Grid cho phần trái */
-            grid-template-rows: 70% 30%; /* Tỷ lệ 70% và 30% */
+            grid-template-rows: 10% 90%; /* Tỷ lệ 10% và 90% */
         }
         .top {
             background-color: #f0f0f0;
@@ -24,7 +24,16 @@
             box-sizing: border-box;
         }
         .bottom {
+            display: grid; /* Sử dụng Grid cho phần dưới */
+            grid-template-rows: 70% 30%; /* Tỷ lệ 70% và 30% */
+        }
+        .inner-top {
             background-color: #d0d0d0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .inner-bottom {
+            background-color: #d8d8d8;
             padding: 20px;
             box-sizing: border-box;
         }
@@ -39,12 +48,18 @@
     <div class="container">
         <div class="left">
             <div class="top">
-                <h2>Phần Trên (70%)</h2>
+                <h2>Phần Trên (10%)</h2>
                 <p>Nội dung ở đây...</p>
             </div>
             <div class="bottom">
-                <h2>Phần Dưới (30%)</h2>
-                <p>Nội dung ở đây...</p>
+                <div class="inner-top">
+                    <h2>Phần Giữa (70% của 90%)</h2>
+                    <p>Nội dung ở đây...</p>
+                </div>
+                <div class="inner-bottom">
+                    <h2>Phần Dưới (30% của 90%)</h2>
+                    <p>Nội dung ở đây...</p>
+                </div>
             </div>
         </div>
         <div class="right">
