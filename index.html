@@ -8,43 +8,43 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-        }
-        .container {
-            display: flex; /* Sử dụng Flexbox để chia đôi */
             height: 100vh; /* Chiều cao 100% của cửa sổ */
+            display: grid; /* Sử dụng Grid cho phần thân */
+            grid-template-rows: 10% 90%; /* Tỷ lệ 10% và 90% */
         }
         .top {
-            flex: 1; /* Chiếm 10% chiều cao */
-            width: 100%; /* Chiếm toàn bộ chiều rộng */
+            grid-column: 1 / -1; /* Chiếm toàn bộ chiều rộng */
             background-color: #f0f0f0;
             padding: 20px;
             box-sizing: border-box;
+            display: flex; /* Flexbox để căn giữa nội dung */
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            display: grid; /* Sử dụng Grid để chia đôi */
+            grid-template-columns: 70% 30%; /* Tỷ lệ 70% và 30% */
+            height: 100%; /* Chiều cao 100% của phần còn lại */
         }
         .left {
-            flex: 7; /* Chiếm 70% chiều rộng */
-            display: flex;
-            flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+            display: grid; /* Sử dụng Grid cho phần trái */
+            grid-template-rows: 90%; /* Tỷ lệ 90% */
         }
         .bottom {
-            flex: 9; /* Chiếm 90% chiều cao */
-            display: flex;
-            flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
-            width: 100%; /* Chiếm toàn bộ chiều rộng */
+            display: grid; /* Sử dụng Grid cho phần dưới */
+            grid-template-rows: 70% 30%; /* Tỷ lệ 70% và 30% */
         }
         .inner-top {
-            flex: 7; /* Chiếm 70% chiều cao của bottom */
             background-color: #d0d0d0;
             padding: 20px;
             box-sizing: border-box;
         }
         .inner-bottom {
-            flex: 3; /* Chiếm 30% chiều cao của bottom */
             background-color: #d8d8d8;
             padding: 20px;
             box-sizing: border-box;
         }
         .right {
-            flex: 3; /* Chiếm 30% chiều rộng */
             background-color: #c0c0c0;
             padding: 20px;
             box-sizing: border-box;
