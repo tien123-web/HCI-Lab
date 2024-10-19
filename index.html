@@ -10,29 +10,25 @@
             font-family: Arial, sans-serif;
         }
         .container {
-            display: flex; /* Sử dụng Flexbox để chia đôi */
+            display: grid; /* Sử dụng Grid để chia đôi */
+            grid-template-columns: 70% 30%; /* Tỷ lệ 70% và 30% */
             height: 100vh; /* Chiều cao 100% của cửa sổ */
         }
         .left {
-            flex: 7; /* Chiếm 70% chiều rộng */
-            background-color: #f0f0f0;
-            padding: 20px;
-            box-sizing: border-box;
+            display: grid; /* Sử dụng Grid cho phần trái */
+            grid-template-rows: 70% 30%; /* Tỷ lệ 70% và 30% */
         }
         .top {
-            flex: 7;
             background-color: #f0f0f0;
             padding: 20px;
             box-sizing: border-box;
         }
         .bottom {
-            flex: 3;
-            background-color: #f0f0f0;
+            background-color: #d0d0d0;
             padding: 20px;
             box-sizing: border-box;
         }
         .right {
-            flex: 3; /* Chiếm 30% chiều rộng */
             background-color: #c0c0c0;
             padding: 20px;
             box-sizing: border-box;
@@ -42,17 +38,15 @@
 <body>
     <div class="container">
         <div class="left">
-            <h2>Phần Trái (70%)</h2>
-            <p>Nội dung ở đây...</p>
+            <div class="top">
+                <h2>Phần Trên (70%)</h2>
+                <p>Nội dung ở đây...</p>
+            </div>
+            <div class="bottom">
+                <h2>Phần Dưới (30%)</h2>
+                <p>Nội dung ở đây...</p>
+            </div>
         </div>
-        <div class="top">
-            <h2>Phần tren (70%)</h2>
-            <p>Nội dung ở đây...</p>
-        </div>
-        <div class="botttom">
-            <h2>Phần duoi (30%)</h2>
-            <p>Nội dung ở đây...</p>
-        </div> 
         <div class="right">
             <h2>Phần Phải (30%)</h2>
             <p>Nội dung ở đây...</p>
