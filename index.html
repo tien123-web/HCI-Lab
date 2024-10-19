@@ -3,47 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MuleSoft 4.X Course</title>
-    <link rel="stylesheet" href="styles.css"> <!-- CSS sẽ được link vào đây -->
+    <title>MuleSoft 4.X Complete Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+        }
+        .video-section {
+            flex: 2;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .course-content {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-left: 1px solid #ddd;
+            overflow-y: auto;
+        }
+        .course-content h2, .video-section h2 {
+            margin-top: 0;
+        }
+        .course-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .course-content ul li {
+            margin-bottom: 10px;
+        }
+        .accordion-section h3 {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+        .accordion-content {
+            display: none;
+            padding: 0 10px;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+        .overview-section {
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-top: 1px solid #ddd;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Video Section -->
-    <section class="video-section">
-        <iframe src="https://www.example.com/video" title="MuleSoft Integration Video" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
-    </section>
+<div class="container">
+    <!-- Phần video và nội dung bên trái -->
+    <div class="video-section">
+        <h2>Integration and Integration history</h2>
+        <iframe width="100%" height="400px" src="https://www.example.com/video" frameborder="0" allowfullscreen></iframe>
+        <p>Integration: The process of making data transfer between multiple systems is known as integration.</p>
+        <p>If we don’t want to transfer the data between systems, then integration is not required.</p>
+        <p>Years ago, everyone used paper to persist or transfer data...</p>
+    </div>
 
-    <!-- Course Content Section -->
-    <section class="course-content">
-        <h2>Course Content</h2>
-        <div class="section">
-            <h3>Section 2: Integration Introduction</h3>
-            <ul>
-                <li>2.1 Integration Basics (8 min)</li>
-                <li>2.2 Mule API Lifecycle (4 min)</li>
-                <li>2.3 Course Resources (1 min)</li>
-            </ul>
-        </div>
-        <div class="section">
-            <h3>Section 3: Mule Installation Setup</h3>
-            <ul>
-                <li>3.1 Install Mule (10 min)</li>
-                <li>3.2 Configure Environment (11 min)</li>
-            </ul>
-        </div>
-        <!-- Add more sections as needed -->
-    </section>
-
-    <!-- Course Info Section -->
-    <section class="info-section">
-        <h2>What You'll Learn</h2>
+    <!-- Phần nội dung khóa học bên phải -->
+    <div class="course-content">
+        <h2>Course content</h2>
         <ul>
-            <li>✓ Expert in Mule ESB, Anypoint platform operations, MUnit and DevOps.</li>
-            <li>✓ Step by step coding in detail.</li>
-            <li>✓ Able to set up MuleSoft for your organization.</li>
-            <li>✓ Develop, design, manage projects confidently.</li>
+            <li>
+                <input type="checkbox" id="section1">
+                <label for="section1">2. Integration introduction - 8min</label>
+            </li>
+            <li>
+                <input type="checkbox" id="section2">
+                <label for="section2">3. Mule API development life cycle and components - 4min</label>
+            </li>
+            <li>
+                <input type="checkbox" id="section3">
+                <label for="section3">4. Course resources & documents - 1min</label>
+                <button>Resources</button>
+            </li>
         </ul>
-    </section>
+
+        <!-- Accordion sections -->
+        <div class="accordion-section">
+            <h3 onclick="toggleSection(1)">Section 2: Mule 4 installation set-up (0 / 2 | 21min)</h3>
+            <div id="accordion1" class="accordion-content">
+                <p>Lesson 1: Installing Mule 4</p>
+                <p>Lesson 2: Setting up your environment</p>
+            </div>
+        </div>
+
+        <div class="accordion-section">
+            <h3 onclick="toggleSection(2)">Section 3: Mule basics - develop first mule app (0 / 7 | 42min)</h3>
+            <div id="accordion2" class="accordion-content">
+                <p>Lesson 1: Introduction to Mule basics</p>
+                <p>Lesson 2: First Mule application</p>
+            </div>
+        </div>
+
+        <!-- Thêm các section khác nếu cần -->
+    </div>
+</div>
+
+<!-- Phần Overview ở dưới cùng -->
+<div class="overview-section">
+    <h2>Upgraded with latest MuleSoft ESB versions...</h2>
+    <p>Ratings: ⭐ 4.6 (4,705 ratings)</p>
+    <p>Students: 26,379 | Total: 50.5 hours</p>
+</div>
+
+<script>
+    function toggleSection(id) {
+        var content = document.getElementById('accordion' + id);
+        if (content.style.display === 'block') {
+            content.style.display = 'none';
+        } else {
+            content.style.display = 'block';
+        }
+    }
+</script>
 
 </body>
 </html>
