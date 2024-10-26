@@ -44,6 +44,8 @@
             border-bottom: 2px solid white;
         }
         .content {
+             align-items: center; /* Căn giữa theo chiều dọc */
+            justify-content: space-between; /* Đưa nút button sang bên phải */
             padding: 20px;
             width: 100%;
         }
@@ -53,6 +55,17 @@
             background-color: #2c2c2c;
             border-radius: 5px;
             width: 100%;
+            text-align: left; /* Căn chữ về bên trái */
+        }
+        . button {
+            .button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
         }
         .section h2 {
             font-size: 1.5em;
@@ -101,24 +114,7 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>My Learning</h1>
-        <p>87hr 36min watched <span>ⓘ</span> <a href="#" style="color: #dddddd;">View all activity</a></p>
-    </div>
-
-    <div class="tab-menu">
-        <a href="#">All courses</a>
-        <a href="#">Learning paths</a>
-        <a href="#" class="active">Certifications</a>
-        <a href="#">Archived</a>
-        <a href="#">Learning tools</a>
-    </div>
-
-    <div class="content">
-        <div class="section">
-            <h2>My badges</h2>
-            <p>You have earned and uploaded <strong>0 badges</strong></p>
-            <p>Currently, there are no badges uploaded to your profile. Begin your journey towards your certification goals or <a href="#" style="color: #8a2be2;">upload your third-party badges</a> to your profile and impress your manager and peers with your accomplishments.</p>
+ button">
             <a href="#" class="badge-button">Import new badge</a>
         </div>
 
