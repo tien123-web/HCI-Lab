@@ -107,32 +107,6 @@
             color: #ccc;
         }
     </style>
-    <script>
-        function showSection(section) {
-            // Ẩn tất cả các phần
-            const sections = document.querySelectorAll(".section");
-            sections.forEach(sec => sec.style.display = "none");
-
-            // Hiển thị phần được chọn
-            const selectedSection = document.getElementById(section);
-            if (selectedSection) {
-                selectedSection.style.display = "flex"; // Hiển thị phần đã chọn
-            }
-
-            // Cập nhật trạng thái active trên thanh menu
-            const tabs = document.querySelectorAll(".tab-menu a");
-            tabs.forEach(tab => {
-                tab.classList.remove("active");
-                if (tab.textContent.toLowerCase() === section) {
-                    tab.classList.add("active");
-                }
-            });
-        }
-
-        window.onload = function() {
-            showSection("certifications"); // Mặc định hiển thị Certifications
-        };
-    </script>
 </head>
 <body>
     <div class="header">
@@ -173,68 +147,31 @@
         <button class="cert-button" onclick="addCertificate()">Add New Certificate</button>
     </div>
 
-    <script>
-        const certificates = [
-            {
-                name: "Oracle Certified Associate, Java SE 8 Programmer",
-                provider: "Oracle",
-                image: "https://via.placeholder.com/80"
-            },
-            {
-                name: "ISTQB® Certified Tester Foundation Level (CTFL)",
-                provider: "Brightest",
-                image: "https://via.placeholder.com/80"
-            },
-            {
-                name: "AWS Certified Solutions Architect - Associate",
-                provider: "Amazon",
-                image: "https://via.placeholder.com/80"
-            },
-            {
-                name: "Cisco Certified Network Associate (CCNA)",
-                provider: "Cisco",
-                image: "https://via.placeholder.com/80"
-            },
-            {
-                name: "Microsoft Certified: Azure Fundamentals",
-                provider: "Microsoft",
-                image: "https://via.placeholder.com/80"
-            },
-            {
-                name: "Certified Kubernetes Administrator (CKA)",
-                provider: "Cloud Native Computing Foundation",
-                image: "https://via.placeholder.com/80"
+          <script>
+        function showSection(section) {
+            // Ẩn tất cả các phần
+            const sections = document.querySelectorAll(".section");
+            sections.forEach(sec => sec.style.display = "none");
+
+            // Hiển thị phần được chọn
+            const selectedSection = document.getElementById(section);
+            if (selectedSection) {
+                selectedSection.style.display = "flex"; // Hiển thị phần đã chọn
             }
-        ];
 
-        function displayCertificates() {
-            const certificationList = document.getElementById("certificationList");
-            certificationList.innerHTML = ""; // Xóa nội dung hiện tại
-
-            certificates.forEach(cert => {
-                const certCard = document.createElement("div");
-                certCard.className = "cert-card";
-                certCard.innerHTML = `
-                    <img src="${cert.image}" alt="${cert.name}">
-                    <h3>${cert.name}</h3>
-                    <p>${cert.provider}</p>
-                `;
-                certificationList.appendChild(certCard);
+            // Cập nhật trạng thái active trên thanh menu
+            const tabs = document.querySelectorAll(".tab-menu a");
+            tabs.forEach(tab => {
+                tab.classList.remove("active");
+                if (tab.textContent.toLowerCase() === section) {
+                    tab.classList.add("active");
+                }
             });
         }
 
-        function addCertificate() {
-            const newCert = {
-                name: "New Certificate Name",
-                provider: "New Provider",
-                image: "https://via.placeholder.com/80"
-            };
-            certificates.push(newCert); // Thêm chứng chỉ mới vào mảng
-            displayCertificates(); // Cập nhật danh sách chứng chỉ hiển thị
-        }
-
-        // Hiển thị chứng chỉ khi trang được tải
-        displayCertificates();
+        window.onload = function() {
+            showSection("certifications"); // Mặc định hiển thị Certifications
+        };
     </script>
 </body>
 </html>
