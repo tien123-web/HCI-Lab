@@ -1,184 +1,126 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khung Chia Đôi Màn Hình</title>
+    <title>My Learning</title>
     <style>
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            height: 100vh; /* Chiều cao 100% của cửa sổ */
-            display: flex;
-            flex-direction: column;
-        }
-        .top {
-            height: 10%; /* Chiều cao 10% */
-            width: 100%; /* Chiếm toàn bộ chiều rộng */
-            background-color: #f0f0f0;
-            padding: 20px;
-            box-sizing: border-box;
-            display: flex; /* Flexbox để căn giữa nội dung */
-            justify-content: center;
-            align-items: center;
+            background-color: #1c1c1c;
+            color: white;
+            margin: 0;
+            padding: 0;
         }
         .container {
-            display: flex; /* Sử dụng Flexbox để chia đôi */
-            flex: 1; /* Chiếm phần còn lại của chiều cao */
-        }
-        .left {
-            flex: 7; /* Chiếm 70% chiều rộng */
-            display: flex;
-            flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
-            justify-content: space-between; /* Tạo không gian giữa các phần tử */
-        }
-        .bottom {
-            flex: 9; /* Chiếm 90% chiều cao */
-            display: flex;
-            flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
-        }
-        .inner-top {
-            flex: 7; /* Chiếm 70% chiều cao của bottom */
-            background-color: #d0d0d0;
+            max-width: 1000px;
+            margin: 0 auto;
             padding: 20px;
-            box-sizing: border-box;
         }
-        .inner-bottom {
-            flex: 3; /* Chiếm 30% chiều cao của bottom */
-            background-color: #d8d8d8;
-            padding: 20px;
-            box-sizing: border-box;
+        h1 {
+            font-size: 2em;
+            margin: 0;
         }
-        .right {
-            flex: 3; /* Chiếm 30% chiều rộng */
-            background-color: #c0c0c0;
-            padding: 20px;
-            box-sizing: border-box;
+        .header {
+            background-color: #2c2c2c;
+            padding: 10px 20px;
+        }
+        .tab-menu {
             display: flex;
-            flex-direction: column; /* Sắp xếp theo chiều dọc */
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid #444;
         }
-        .tab {
-            display: flex; /* Sắp xếp các tab theo chiều ngang */
-            cursor: pointer;
-            background-color: #e0e0e0;
+        .tab-menu a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .tab-menu a.active {
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+        }
+        .section {
+            padding: 20px 0;
+            border-bottom: 1px solid #444;
+        }
+        .section h2 {
+            font-size: 1.5em;
             margin-bottom: 10px;
-            padding: 10px;
-            border-radius: 5px; /* Bo góc */
-            justify-content: center; /* Căn giữa nội dung trong tab */
         }
-        .tab-content {
-            display: none; /* Ẩn nội dung tab */
-            background-color: #d8d8d8;
-            padding: 20px;
-            border-radius: 5px; /* Bo góc */
+        .badge-button, .cert-button {
+            background-color: #8a2be2;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
         }
-        .active {
-            background-color: #c0c0c0; /* Màu nền cho tab đang hoạt động */
+        .certification-list {
+            display: flex;
+            gap: 20px;
+            padding-top: 20px;
         }
-        .active-content {
-            display: block; /* Hiện nội dung của tab đang hoạt động */
+        .cert-card {
+            background-color: #2c2c2c;
+            padding: 15px;
+            border-radius: 5px;
+            width: 220px;
+            text-align: center;
         }
-        h2 {
-            margin: 0; /* Không có khoảng cách ở tiêu đề */
+        .cert-card img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .cert-card h3 {
+            font-size: 1em;
+            margin: 10px 0 5px;
+        }
+        .cert-card p {
+            font-size: 0.9em;
+            color: #ccc;
         }
     </style>
 </head>
 <body>
-    <div class="top">
-        <h2>Phần Trên (10%)</h2>
-        <p>Nội dung ở đây...</p>
-    </div>
     <div class="container">
-        <div class="left">
-            <div class="bottom">
-                <div class="inner-top">
-                    <h2>Phần Giữa (70% của 90%)</h2>
-                    <p>Nội dung ở đây...</p>
-                </div>
-                <div class="inner-bottom">
-                    <h2>Phần Dưới (30% của 90%)</h2>
-                    <p>Nội dung ở đây...</p>
-                </div>
-            </div>
+        <div class="header">
+            <h1>My Learning</h1>
+            <p>87hr 36min watched <span>|</span> <a href="#" style="color: #ddd;">View all activity</a></p>
         </div>
-        <div class="right">
-            <h2>Các Thể Loại Phim</h2>
-            <div class="tab" onclick="openTab(event, 'comedy')">Hài Hước</div>
-            <div class="tab" onclick="openTab(event, 'adventure')">Phiêu Lưu</div>
-            <div class="tab" onclick="openTab(event, 'horror')">Kinh Dị</div>
-            <div class="tab" onclick="openTab(event, 'action')">Hành Động</div>
-            <div class="tab" onclick="openTab(event, 'romance')">Tình Cảm</div>
-            <div class="tab" onclick="openTab(event, 'sci-fi')">Khoa Học Viễn Tưởng</div>
 
-            <div id="comedy" class="tab-content">
-                <h3>Danh Sách Phim Hài Hước</h3>
-                <ul>
-                    <li>Phim Hài 1</li>
-                    <li>Phim Hài 2</li>
-                    <li>Phim Hài 3</li>
-                </ul>
-            </div>
-            <div id="adventure" class="tab-content">
-                <h3>Danh Sách Phim Phiêu Lưu</h3>
-                <ul>
-                    <li>Phim Phiêu Lưu 1</li>
-                    <li>Phim Phiêu Lưu 2</li>
-                    <li>Phim Phiêu Lưu 3</li>
-                </ul>
-            </div>
-            <div id="horror" class="tab-content">
-                <h3>Danh Sách Phim Kinh Dị</h3>
-                <ul>
-                    <li>Phim Kinh Dị 1</li>
-                    <li>Phim Kinh Dị 2</li>
-                    <li>Phim Kinh Dị 3</li>
-                </ul>
-            </div>
-            <div id="action" class="tab-content">
-                <h3>Danh Sách Phim Hành Động</h3>
-                <ul>
-                    <li>Phim Hành Động 1</li>
-                    <li>Phim Hành Động 2</li>
-                    <li>Phim Hành Động 3</li>
-                </ul>
-            </div>
-            <div id="romance" class="tab-content">
-                <h3>Danh Sách Phim Tình Cảm</h3>
-                <ul>
-                    <li>Phim Tình Cảm 1</li>
-                    <li>Phim Tình Cảm 2</li>
-                    <li>Phim Tình Cảm 3</li>
-                </ul>
-            </div>
-            <div id="sci-fi" class="tab-content">
-                <h3>Danh Sách Phim Khoa Học Viễn Tưởng</h3>
-                <ul>
-                    <li>Phim Khoa Học Viễn Tưởng 1</li>
-                    <li>Phim Khoa Học Viễn Tưởng 2</li>
-                    <li>Phim Khoa Học Viễn Tưởng 3</li>
-                </ul>
+        <div class="tab-menu">
+            <a href="#">All courses</a>
+            <a href="#">Learning paths</a>
+            <a href="#" class="active">Certifications</a>
+            <a href="#">Archived</a>
+            <a href="#">Learning tools</a>
+        </div>
+
+        <div class="section">
+            <h2>My badges</h2>
+            <p>You have earned and uploaded <strong>0 badges</strong></p>
+            <p>Currently, there are no badges uploaded to your profile. Begin your journey towards your certification goals or <a href="#" style="color: #8a2be2;">upload your third-party badges</a> to your profile and impress your manager and peers with your accomplishments.</p>
+            <a href="#" class="badge-button">Import new badge</a>
+        </div>
+
+        <div class="section">
+            <h2>Certification preparation</h2>
+            <p>You are preparing for <strong>4 certifications</strong></p>
+            <a href="#" class="cert-button">Explore certification preparation</a>
+            <div class="certification-list">
+                <div class="cert-card">
+                    <img src="https://via.placeholder.com/80" alt="Oracle Certified Associate">
+                    <h3>Oracle Certified Associate, Java SE 8 Programmer</h3>
+                    <p>Oracle</p>
+                </div>
+                <div class="cert-card">
+                    <img src="https://via.placeholder.com/80" alt="ISTQB Certified Tester">
+                    <h3>ISTQB® Certified Tester Foundation Level (CTFL)</h3>
+                    <p>Brightest</p>
+                </div>
+                <!-- Thêm các chứng chỉ khác nếu cần -->
             </div>
         </div>
     </div>
-
-    <script>
-        function openTab(evt, tabName) {
-            // Ẩn tất cả các tab content
-            var tabContents = document.getElementsByClassName("tab-content");
-            for (var i = 0; i < tabContents.length; i++) {
-                tabContents[i].classList.remove("active-content");
-            }
-
-            // Bỏ chọn tất cả các tab
-            var tabs = document.getElementsByClassName("tab");
-            for (var i = 0; i < tabs.length; i++) {
-                tabs[i].classList.remove("active");
-            }
-
-            // Hiện tab content hiện tại
-            document.getElementById(tabName).classList.add("active-content");
-            evt.currentTarget.classList.add("active");
-        }
-    </script>
 </body>
 </html>
