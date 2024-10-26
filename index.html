@@ -106,25 +106,20 @@
             font-size: 0.9em;
             color: #ccc;
         }
-        .video-container {
-            margin: 20px 0;
-        }
-        .video-container video {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
     </style>
     <script>
         function showSection(section) {
+            // Ẩn tất cả các phần
             const sections = document.querySelectorAll(".section");
             sections.forEach(sec => sec.style.display = "none");
 
+            // Hiển thị phần được chọn
             const selectedSection = document.getElementById(section);
             if (selectedSection) {
                 selectedSection.style.display = "flex"; // Hiển thị phần đã chọn
             }
 
+            // Cập nhật trạng thái active trên thanh menu
             const tabs = document.querySelectorAll(".tab-menu a");
             tabs.forEach(tab => {
                 tab.classList.remove("active");
@@ -154,44 +149,6 @@
     </div>
 
     <div class="content">
-        <div id="certifications" class="section">
-            <div class="section-content">
-                <h2>My badges</h2>
-                <p>You have earned and uploaded <strong>0 badges</strong></p>
-                <p>Currently, there are no badges uploaded to your profile. Begin your journey towards your certification goals or <a href="#" style="color: #8a2be2;">upload your third-party badges</a> to your profile and impress your manager and peers with your accomplishments.</p>
-            </div>
-            <a href="#" class="badge-button">Import new badge</a>
-
-            <div class="video-container">
-                <video controls>
-                    <source src="your-video-source.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <div class="section">
-                <div class="section-content">
-                    <h2>Certification preparation</h2>
-                    <p>You are preparing for <strong>4 certifications</strong></p>
-                </div>
-                <a href="#" class="cert-button">Explore certification preparation</a>
-            </div>
-
-            <div class="section certification-list">
-                <div class="cert-card">
-                    <img src="https://via.placeholder.com/80" alt="Oracle Certified Associate">
-                    <h3>Oracle Certified Associate, Java SE 8 Programmer</h3>
-                    <p>Oracle</p>
-                </div>
-                <div class="cert-card">
-                    <img src="https://via.placeholder.com/80" alt="ISTQB Certified Tester">
-                    <h3>ISTQB® Certified Tester Foundation Level (CTFL)</h3>
-                    <p>Brightest</p>
-                </div>
-                <!-- Thêm các chứng chỉ khác nếu cần -->
-            </div>
-        </div>
-
         <div id="all_courses" class="section">
             <div class="section-content">
                 <h2>All Courses</h2>
@@ -203,6 +160,35 @@
             <div class="section-content">
                 <h2>Learning Paths</h2>
                 <p>Details about learning paths go here.</p>
+            </div>
+        </div>
+
+        <div id="certifications" class="section">
+            <div class="section-content">
+                <h2>My badges</h2>
+                <p>You have earned and uploaded <strong>0 badges</strong></p>
+                <p>Currently, there are no badges uploaded to your profile. Begin your journey towards your certification goals or <a href="#" style="color: #8a2be2;">upload your third-party badges</a> to your profile and impress your manager and peers with your accomplishments.</p>
+                <a href="#" class="badge-button">Import new badge</a>
+            </div>
+
+            <div class="section-content">
+                <h2>Certification preparation</h2>
+                <p>You are preparing for <strong>4 certifications</strong></p>
+                <a href="#" class="cert-button">Explore certification preparation</a>
+            </div>
+
+            <div class="certification-list">
+                <div class="cert-card">
+                    <img src="https://via.placeholder.com/80" alt="Oracle Certified Associate">
+                    <h3>Oracle Certified Associate, Java SE 8 Programmer</h3>
+                    <p>Oracle</p>
+                </div>
+                <div class="cert-card">
+                    <img src="https://via.placeholder.com/80" alt="ISTQB Certified Tester">
+                    <h3>ISTQB® Certified Tester Foundation Level (CTFL)</h3>
+                    <p>Brightest</p>
+                </div>
+                <!-- Thêm các chứng chỉ khác nếu cần -->
             </div>
         </div>
 
