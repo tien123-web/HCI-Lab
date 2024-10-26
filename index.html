@@ -107,6 +107,32 @@
             color: #ccc;
         }
     </style>
+        <script>
+        function showSection(section) {
+            // Ẩn tất cả các phần
+            const sections = document.querySelectorAll(".section");
+            sections.forEach(sec => sec.style.display = "none");
+
+            // Hiển thị phần được chọn
+            const selectedSection = document.getElementById(section);
+            if (selectedSection) {
+                selectedSection.style.display = "flex"; // Hiển thị phần đã chọn
+            }
+
+            // Cập nhật trạng thái active trên thanh menu
+            const tabs = document.querySelectorAll(".tab-menu a");
+            tabs.forEach(tab => {
+                tab.classList.remove("active");
+                if (tab.textContent.toLowerCase() === section) {
+                    tab.classList.add("active");
+                }
+            });
+        }
+
+        window.onload = function() {
+            showSection("certifications"); // Mặc định hiển thị Certifications
+        };
+    </script>
 </head>
 <body>
     <div class="header">
