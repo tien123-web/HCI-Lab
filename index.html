@@ -18,11 +18,11 @@
         .header {
             background-color: #2c2c2c;
             padding: 20px;
-            text-align:left;
+            text-align: center;
         }
         .header h1 {
             font-size: 2em;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
         }
         .header p {
             color: #bbbbbb;
@@ -30,7 +30,7 @@
         }
         .tab-menu {
             display: flex;
-            justify-content: left;
+            justify-content: center;
             background-color: #333;
             padding: 15px 0;
         }
@@ -48,7 +48,7 @@
             width: 100%;
         }
         .section {
-            display: none; /* Ẩn tất cả các phần ban đầu */
+            display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
@@ -107,104 +107,108 @@
             color: #ccc;
         }
     </style>
-    <script>
-        function showSection(section) {
-            // Ẩn tất cả các phần
-            const sections = document.querySelectorAll(".section");
-            sections.forEach(sec => sec.style.display = "none");
-
-            // Hiển thị phần được chọn
-            const selectedSection = document.getElementById(section);
-            if (selectedSection) {
-                selectedSection.style.display = "flex"; // Hiển thị phần đã chọn
-            }
-
-            // Cập nhật trạng thái active trên thanh menu
-            const tabs = document.querySelectorAll(".tab-menu a");
-            tabs.forEach(tab => {
-                tab.classList.remove("active");
-                if (tab.textContent.toLowerCase() === section) {
-                    tab.classList.add("active");
-                }
-            });
-        }
-
-        window.onload = function() {
-            showSection("certifications"); // Mặc định hiển thị Certifications
-        };
-    </script>
 </head>
 <body>
     <div class="header">
         <h1>My Learning</h1>
-        <p>87hr 36min watched <span> ⓘ </span> <a href="#" style="color: #dddddd;">View all activity</a></p>
+        <p>87hr 36min watched <span>|</span> <a href="#" style="color: #dddddd;">View all activity</a></p>
     </div>
 
     <div class="tab-menu">
-        <a href="#" onclick="showSection('all_courses')">All courses</a>
-        <a href="#" onclick="showSection('learning_paths')">Learning paths</a>
-        <a href="#" class="active" onclick="showSection('certifications')">Certifications</a>
-        <a href="#" onclick="showSection('archived')">Archived</a>
-        <a href="#" onclick="showSection('learning_tools')">Learning tools</a>
+        <a href="#">All courses</a>
+        <a href="#">Learning paths</a>
+        <a href="#" class="active">Certifications</a>
+        <a href="#">Archived</a>
+        <a href="#">Learning tools</a>
     </div>
 
     <div class="content">
-        <div id="all_courses" class="section">
-            <div class="section-content">
-                <h2>All Courses</h2>
-                <p>Details about all courses go here.</p>
-            </div>
-        </div>
-
-        <div id="learning_paths" class="section">
-            <div class="section-content">
-                <h2>Learning Paths</h2>
-                <p>Details about learning paths go here.</p>
-            </div>
-        </div>
-
-        <div id="certifications" class="section">
+        <div class="section">
             <div class="section-content">
                 <h2>My badges</h2>
                 <p>You have earned and uploaded <strong>0 badges</strong></p>
                 <p>Currently, there are no badges uploaded to your profile. Begin your journey towards your certification goals or <a href="#" style="color: #8a2be2;">upload your third-party badges</a> to your profile and impress your manager and peers with your accomplishments.</p>
-                <a href="#" class="badge-button">Import new badge</a>
             </div>
+            <a href="#" class="badge-button">Import new badge</a>
+        </div>
 
+        <div class="section">
             <div class="section-content">
                 <h2>Certification preparation</h2>
                 <p>You are preparing for <strong>4 certifications</strong></p>
-                <a href="#" class="cert-button">Explore certification preparation</a>
             </div>
-
-            <div class="certification-list">
-                <div class="cert-card">
-                    <img src="https://via.placeholder.com/80" alt="Oracle Certified Associate">
-                    <h3>Oracle Certified Associate, Java SE 8 Programmer</h3>
-                    <p>Oracle</p>
-                </div>
-                <div class="cert-card">
-                    <img src="https://via.placeholder.com/80" alt="ISTQB Certified Tester">
-                    <h3>ISTQB® Certified Tester Foundation Level (CTFL)</h3>
-                    <p>Brightest</p>
-                </div>
-                <!-- Thêm các chứng chỉ khác nếu cần -->
-            </div>
+            <a href="#" class="cert-button">Explore certification preparation</a>
         </div>
 
-        <div id="archived" class="section">
-            <div class="section-content">
-                <h2>Archived</h2>
-                <p>Your archived courses will be listed here.</p>
-            </div>
+        <div class="section certification-list" id="certificationList">
+            <!-- Chứng chỉ sẽ được thêm vào đây qua JavaScript -->
         </div>
 
-        <div id="learning_tools" class="section">
-            <div class="section-content">
-                <h2>Learning Tools</h2>
-                <p>Information about learning tools will be provided here.</p>
-            </div>
-        </div>
+        <button class="cert-button" onclick="addCertificate()">Add New Certificate</button>
     </div>
+
+    <script>
+        const certificates = [
+            {
+                name: "Oracle Certified Associate, Java SE 8 Programmer",
+                provider: "Oracle",
+                image: "https://via.placeholder.com/80"
+            },
+            {
+                name: "ISTQB® Certified Tester Foundation Level (CTFL)",
+                provider: "Brightest",
+                image: "https://via.placeholder.com/80"
+            },
+            {
+                name: "AWS Certified Solutions Architect - Associate",
+                provider: "Amazon",
+                image: "https://via.placeholder.com/80"
+            },
+            {
+                name: "Cisco Certified Network Associate (CCNA)",
+                provider: "Cisco",
+                image: "https://via.placeholder.com/80"
+            },
+            {
+                name: "Microsoft Certified: Azure Fundamentals",
+                provider: "Microsoft",
+                image: "https://via.placeholder.com/80"
+            },
+            {
+                name: "Certified Kubernetes Administrator (CKA)",
+                provider: "Cloud Native Computing Foundation",
+                image: "https://via.placeholder.com/80"
+            }
+        ];
+
+        function displayCertificates() {
+            const certificationList = document.getElementById("certificationList");
+            certificationList.innerHTML = ""; // Xóa nội dung hiện tại
+
+            certificates.forEach(cert => {
+                const certCard = document.createElement("div");
+                certCard.className = "cert-card";
+                certCard.innerHTML = `
+                    <img src="${cert.image}" alt="${cert.name}">
+                    <h3>${cert.name}</h3>
+                    <p>${cert.provider}</p>
+                `;
+                certificationList.appendChild(certCard);
+            });
+        }
+
+        function addCertificate() {
+            const newCert = {
+                name: "New Certificate Name",
+                provider: "New Provider",
+                image: "https://via.placeholder.com/80"
+            };
+            certificates.push(newCert); // Thêm chứng chỉ mới vào mảng
+            displayCertificates(); // Cập nhật danh sách chứng chỉ hiển thị
+        }
+
+        // Hiển thị chứng chỉ khi trang được tải
+        displayCertificates();
+    </script>
 </body>
 </html>
