@@ -19,9 +19,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
             height: 100vh;
-            overflow: auto;
+            overflow: hidden;
         }
 
         /* Navbar */
@@ -36,31 +36,19 @@
             top: 0;
             left: 0;
             align-items: center;
-            z-index: 1000;
-        }
-
-        .navbar .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
         }
 
         .navbar a {
             color: white;
             text-decoration: none;
             margin: 0 1rem;
-            transition: color 0.3s;
-        }
-
-        .navbar a:hover {
-            color: #3ccf91;
         }
 
         /* Main content */
         .content {
             text-align: center;
-            margin-top: 8rem; /* adjusted to accommodate navbar */
+            margin-top: 8rem;
             max-width: 600px;
-            padding: 0 20px;
         }
 
         .content .subtitle {
@@ -102,12 +90,6 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             width: 60%;
-            outline: none;
-            transition: border 0.3s;
-        }
-
-        .email-input:focus {
-            border-color: #3ccf91;
         }
 
         .start-btn {
@@ -118,7 +100,6 @@
             font-size: 1rem;
             cursor: pointer;
             border-radius: 4px;
-            transition: background-color 0.3s;
         }
 
         .start-btn:hover {
@@ -130,10 +111,6 @@
             position: fixed;
             top: 20%;
             width: 150px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            padding: 1rem;
         }
 
         .left-sidebar {
@@ -144,21 +121,32 @@
             right: 0;
         }
 
-        .icon {
+        .triangle-container {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
-            margin: 1rem 0;
+            margin: 1rem;
+        }
+
+        .triangle-container .icon {
+            display: block;
+            margin: 0.5rem 0;
             padding: 0.5rem 1rem;
+            background-color: #f0f0f0;
             border-radius: 20px;
             color: #333;
             font-weight: bold;
-            transition: background-color 0.3s;
+            width: fit-content;
         }
 
-        .icon:hover {
-            background-color: #e0e0e0;
-        }
+        .triangle-container .icon:nth-child(1) { margin-left: 0; }
+        .triangle-container .icon:nth-child(2) { margin-left: 10px; }
+        .triangle-container .icon:nth-child(3) { margin-left: 20px; }
+        .triangle-container .icon:nth-child(4) { margin-left: 10px; }
+        .triangle-container .icon:nth-child(5) { margin-left: 0; }
+        .triangle-container .icon:nth-child(6) { margin-left: 20px; }
+        .triangle-container .icon:nth-child(7) { margin-left: 10px; }
+        .triangle-container .icon:nth-child(8) { margin-left: 0; }
 
         /* Adding custom colors to specific icons */
         .icon[data-color="yellow"] { background-color: #f7df1e; }
@@ -181,26 +169,30 @@
 
     <!-- Left Sidebar -->
     <div class="sidebar left-sidebar">
-        <div class="icon"><i class="fab fa-aws"></i> AWS</div>
-        <div class="icon" data-color="blue"><i class="fab fa-golang"></i> Go</div>
-        <div class="icon"><i class="fab fa-android"></i> Android</div>
-        <div class="icon"><i class="fab fa-node-js"></i> Node JS</div>
-        <div class="icon" data-color="yellow"><i class="fab fa-js-square"></i> JavaScript</div>
-        <div class="icon"><i class="fab fa-vuejs"></i> Vue JS</div>
-        <div class="icon"><i class="fab fa-swift"></i> Swift</div>
-        <div class="icon"><i class="fab fa-react"></i> Redux</div>
+        <div class="triangle-container">
+            <div class="icon"><i class="fab fa-aws"></i> AWS</div>
+            <div class="icon"><i class="fab fa-golang"></i> Go</div>
+            <div class="icon"><i class="fab fa-android"></i> Android</div>
+            <div class="icon"><i class="fab fa-node-js"></i> Node JS</div>
+            <div class="icon"><i class="fab fa-js-square"></i> JavaScript</div>
+            <div class="icon"><i class="fab fa-vuejs"></i> Vue JS</div>
+            <div class="icon"><i class="fab fa-swift"></i> Swift</div>
+            <div class="icon"><i class="fab fa-react"></i> Redux</div>
+        </div>
     </div>
 
     <!-- Right Sidebar -->
     <div class="sidebar right-sidebar">
-        <div class="icon" data-color="purple"><i class="fas fa-code"></i> GraphQL</div>
-        <div class="icon"><i class="fab fa-git-alt"></i> Git</div>
-        <div class="icon"><i class="fab fa-css3-alt"></i> CSS3</div>
-        <div class="icon" data-color="blue"><i class="fab fa-microsoft"></i> Azure</div>
-        <div class="icon"><i class="fas fa-terminal"></i> Bash</div>
-        <div class="icon" data-color="green"><i class="fab fa-python"></i> Python</div>
-        <div class="icon"><i class="fab fa-php"></i> PHP</div>
-        <div class="icon"><i class="fab fa-js"></i> jQuery</div>
+        <div class="triangle-container">
+            <div class="icon" data-color="purple"><i class="fas fa-code"></i> GraphQL</div>
+            <div class="icon"><i class="fab fa-git-alt"></i> Git</div>
+            <div class="icon"><i class="fab fa-css3-alt"></i> CSS3</div>
+            <div class="icon" data-color="blue"><i class="fab fa-microsoft"></i> Azure</div>
+            <div class="icon"><i class="fas fa-terminal"></i> Bash</div>
+            <div class="icon" data-color="green"><i class="fab fa-python"></i> Python</div>
+            <div class="icon"><i class="fab fa-php"></i> PHP</div>
+            <div class="icon"><i class="fab fa-js"></i> jQuery</div>
+        </div>
     </div>
 
     <!-- Main Content -->
@@ -211,7 +203,7 @@
         
         <!-- Email Form -->
         <div class="email-form">
-            <input type="email" class="email-input" placeholder="Enter your work email" required>
+            <input type="email" class="email-input" placeholder="Enter your work email">
             <button class="start-btn">Start Free Trial</button>
         </div>
         <a href="#" style="display: block; margin-top: 1rem; color: #666;">Learn more</a>
