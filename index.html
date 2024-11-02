@@ -1,231 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Learning - 100% Width Layout</title>
+    <title>Coderbyte - Đánh giá ứng viên</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
         body {
             font-family: Arial, sans-serif;
-            background-color: #1c1c1c;
-            color: #ffffff;
-        }
-        .header {
-            background-color: #2c2c2c;
-            padding: 20px;
-            text-align:left;
-        }
-        .header h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        .header p {
-            color: #bbbbbb;
-            font-size: 0.9em;
-        }
-        .tab-menu {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
             display: flex;
-            justify-content: left;
-            background-color: #333;
-            padding: 15px 0;
-        }
-        .tab-menu a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 15px;
-            padding-bottom: 5px;
-        }
-        .tab-menu a.active {
-            border-bottom: 2px solid white;
-        }
-        .content {
-            padding: 20px;
-            width: 100%;
-        }
-        .section {
-            display: none; /* Ẩn tất cả các phần ban đầu */
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 20px;
-            padding: 20px;
-            background-color: #2c2c2c;
-            border-radius: 5px;
+        }
+
+        /* Navbar */
+        .navbar {
             width: 100%;
-        }
-        .section-content {
-            flex-grow: 1;
-            text-align: left;
-            margin-right: 20px;
-        }
-        .section h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        .badge-button, .cert-button {
-            display: inline-block;
-            background-color: #8a2be2;
+            background-color: #1a1a2e;
             color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.9em;
-            margin-top: 10px;
-        }
-        .certification-list {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
             justify-content: space-between;
-            margin-top: 20px;
+            padding: 1rem 2rem;
+            align-items: center;
         }
-        .cert-card {
-            background-color: #333;
-            padding: 15px;
-            border-radius: 5px;
-            flex: 1 1 calc(25% - 20px);
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        /* Main content */
+        .content {
             text-align: center;
-            min-width: 200px;
-            max-width: 250px;
+            margin: 4rem auto;
+            max-width: 600px;
         }
-        .cert-card img {
-            max-width: 100%;
-            border-radius: 5px;
-            margin-bottom: 10px;
+
+        .content h1 {
+            color: #3ccf91;
+            font-size: 2.5rem;
         }
-        .cert-card h3 {
-            font-size: 1em;
-            margin: 10px 0 5px;
-            color: #ffffff;
+
+        .content h2 {
+            color: #1a1a2e;
+            font-size: 2rem;
         }
-        .cert-card p {
-            font-size: 0.9em;
-            color: #ccc;
+
+        .content p {
+            color: #666;
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+
+        /* Email form */
+        .email-form {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .email-input {
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 60%;
+        }
+
+        .start-btn {
+            background-color: #3ccf91;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .start-btn:hover {
+            background-color: #33b883;
+        }
+
+        /* Sidebar icons */
+        .sidebar {
+            position: fixed;
+            top: 20%;
+            width: 120px;
+        }
+
+        .left-sidebar {
+            left: 0;
+        }
+
+        .right-sidebar {
+            right: 0;
+        }
+
+        .icon {
+            display: block;
+            margin: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #f0f0f0;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #333;
         }
     </style>
-    <script>
-        function showSection(section) {
-            // Ẩn tất cả các phần
-            const sections = document.querySelectorAll(".section");
-            sections.forEach(sec => sec.style.display = "none");
-
-            // Hiển thị phần được chọn
-            const selectedSection = document.getElementById(section);
-            if (selectedSection) {
-                selectedSection.style.display = "flex"; // Hiển thị phần đã chọn
-            }
-
-            // Cập nhật trạng thái active trên thanh menu
-            const tabs = document.querySelectorAll(".tab-menu a");
-            tabs.forEach(tab => {
-                tab.classList.remove("active");
-                if (tab.textContent.toLowerCase() === section) {
-                    tab.classList.add("active");
-                }
-            });
-        }
-
-        window.onload = function() {
-            showSection("certifications"); // Mặc định hiển thị Certifications
-        };
-    </script>
 </head>
 <body>
-    <div class="header">
-        <h1>My Learning</h1>
-        <p>87hr 36min watched <span> ⓘ </span> <a href="#" style="color: #dddddd;">View all activity</a></p>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">Coderbyte</div>
+        <div class="menu">
+            <a href="#">Developers</a>
+            <a href="#">Organizations</a>
+            <a href="#">Dashboard</a>
+        </div>
     </div>
 
-    <div class="tab-menu">
-        <a href="#" onclick="showSection('all_courses')">All courses</a>
-        <a href="#" onclick="showSection('learning_paths')">Learning paths</a>
-        <a href="#" class="active" onclick="showSection('certifications')">Certifications</a>
-        <a href="#" onclick="showSection('archived')">Archived</a>
-        <a href="#" onclick="showSection('learning_tools')">Learning tools</a>
+    <!-- Left Sidebar -->
+    <div class="sidebar left-sidebar">
+        <span class="icon">AWS</span>
+        <span class="icon">Go</span>
+        <span class="icon">Android</span>
+        <span class="icon">Node JS</span>
+        <span class="icon">Java</span>
+        <span class="icon">Vue JS</span>
+        <span class="icon">Swift</span>
+        <span class="icon">Redux</span>
     </div>
 
+    <!-- Right Sidebar -->
+    <div class="sidebar right-sidebar">
+        <span class="icon">GraphQL</span>
+        <span class="icon">Git</span>
+        <span class="icon">CSS3</span>
+        <span class="icon">Azure</span>
+        <span class="icon">Bash</span>
+        <span class="icon">Python</span>
+        <span class="icon">PHP</span>
+        <span class="icon">jQuery</span>
+    </div>
+
+    <!-- Main Content -->
     <div class="content">
-        <div id="all_courses" class="section">
-            <div class="section-content">
-                <h2>All Courses</h2>
-                <p>Details about all courses go here.</p>
-            </div>
-        </div>
-
-        <div id="learning_paths" class="section">
-            <div class="section-content">
-                <h2>Learning Paths</h2>
-                <p>Details about learning paths go here.</p>
-            </div>
-        </div>
-
-        <div id="certifications" class="section">
-            <div class="section-content">
-                <h2>My badges</h2>
-                <p>You have earned and uploaded <strong>0 badges</strong></p>
-                <p>Currently, there are no badges uploaded to your profile. Begin your journey towards your certification goals or <a href="#" style="color: #8a2be2;">upload your third-party badges</a> to your profile and impress your manager and peers with your accomplishments.</p>
-            </div>
-            <a href="#" class="badge-button">Import new badge</a>
-            <div class="section">
-            <div class="section-content">
-                <h2>Certification preparation</h2>
-                <p>You are preparing for <strong>4 certifications</strong></p>
-            </div>
-            <a href="#" class="cert-button">Explore certification preparation</a>
-        </div>
-
-        <div class="section certification-list">
-            <div class="cert-card">
-                <img src="https://via.placeholder.com/80" alt="Oracle Certified Associate">
-                <h3>Oracle Certified Associate, Java SE 8 Programmer</h3>
-                <p>Oracle</p>
-            </div>
-            <div class="cert-card">
-                <img src="https://via.placeholder.com/80" alt="ISTQB Certified Tester">
-                <h3>ISTQB® Certified Tester Foundation Level (CTFL)</h3>
-                <p>Brightest</p>
-            </div>
-        </div>
-
-        <div id="archived" class="section">
-            <div class="section-content">
-                <h2>Archived</h2>
-                <p>Your archived courses will be listed here.</p>
-            </div>
-        </div>
-
-        <div id="learning_tools" class="section">
-            <div class="section-content">
-                <h2>Learning Tools</h2>
-                <p>Information about learning tools will be provided here.</p>
-            </div>
-        </div>
-
-        <div class="section certification-list">
-            <div class="cert-card">
-                <img src="https://via.placeholder.com/80" alt="Oracle Certified Associate">
-                <h3>Oracle Certified Associate, Java SE 8 Programmer</h3>
-                <p>Oracle</p>
-            </div>
-            <div class="cert-card">
-                <img src="https://via.placeholder.com/80" alt="ISTQB Certified Tester">
-                <h3>ISTQB® Certified Tester Foundation Level (CTFL)</h3>
-                <p>Brightest</p>
-            </div>
-            <!-- Thêm các chứng chỉ khác nếu cần -->
-        </div>
-
-        <div class="section">
-            <div class="section-content">
-                <h2>Certification preparation</h2>
-                <p>You are preparing for <strong>4 certifications</strong></p>
-            </div>
-            <a href="#" class="cert-button">Explore certification preparation</a>
+        <h1>Đánh giá ứng viên Nhanh chóng, Tiết kiệm, và Chính xác</h1>
+        <p>Nền tảng số 1 cho các bài đánh giá kỹ thuật, phỏng vấn và dự án. Có ứng viên và quản trị viên không giới hạn trong mọi gói.</p>
+        
+        <!-- Email Form -->
+        <div class="email-form">
+            <input type="email" class="email-input" placeholder="Nhập địa chỉ email công việc">
+            <button class="start-btn">Bắt đầu dùng thử</button>
         </div>
     </div>
+
 </body>
 </html>
