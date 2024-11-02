@@ -1,9 +1,26 @@
-.course-content {
-    flex: 1;
-    background-color: white;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    max-height: 600px;
-    overflow-y: auto;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px; /* khoảng cách giữa các ô */
+    padding: 10px;
+}
+
+.grid-item {
+    background-color: #4CAF50; /* màu nền của các ô */
+    color: white; /* màu chữ */
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #fff; /* viền trắng */
+    font-size: 20px;
 }
