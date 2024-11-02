@@ -1,217 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coderbyte - Candidate Assessment</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Reset CSS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background-color: #f9f9f9;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        /* Navbar */
-        .navbar {
-            width: 100%;
-            background-color: #1a1a2e;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            padding: 1rem 2rem;
-            position: fixed;
-            top: 0;
-            left: 0;
-            align-items: center;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-        }
-
-        /* Main content */
-        .content {
-            text-align: center;
-            margin-top: 8rem;
-            max-width: 600px;
-        }
-
-        .content .subtitle {
-            font-size: 0.8rem;
-            color: #888;
-            margin-bottom: 0.5rem;
-        }
-
-        .content h1 {
-            color: #3ccf91;
-            font-size: 2.5rem;
-            font-weight: bold;
-        }
-
-        .content h2 {
-            color: #333;
-            font-size: 2.2rem;
-            font-weight: bold;
-            margin: 0.5rem 0;
-        }
-
-        .content p {
-            color: #666;
-            font-size: 1rem;
-            margin: 1rem 0;
-        }
-
-        /* Email form */
-        .email-form {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .email-input {
-            padding: 0.75rem;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 60%;
-        }
-
-        .start-btn {
-            background-color: #3ccf91;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .start-btn:hover {
-            background-color: #33b883;
-        }
-
-        /* Sidebar icons */
-        .sidebar {
-            position: fixed;
-            top: 20%;
-            width: 150px;
-        }
-
-        .left-sidebar {
-            left: 0;
-        }
-
-        .right-sidebar {
-            right: 0;
-        }
-
-        .triangle-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 1rem;
-        }
-
-        .triangle-container .icon {
-            display: block;
-            margin: 0.5rem 0;
-            padding: 0.5rem 1rem;
-            background-color: #f0f0f0;
-            border-radius: 20px;
-            color: #333;
-            font-weight: bold;
-            width: fit-content;
-        }
-
-        .triangle-container .icon:nth-child(1) { margin-left: 0; }
-        .triangle-container .icon:nth-child(2) { margin-left: 10px; }
-        .triangle-container .icon:nth-child(3) { margin-left: 20px; }
-        .triangle-container .icon:nth-child(4) { margin-left: 10px; }
-        .triangle-container .icon:nth-child(5) { margin-left: 0; }
-        .triangle-container .icon:nth-child(6) { margin-left: 20px; }
-        .triangle-container .icon:nth-child(7) { margin-left: 10px; }
-        .triangle-container .icon:nth-child(8) { margin-left: 0; }
-
-        /* Adding custom colors to specific icons */
-        .icon[data-color="yellow"] { background-color: #f7df1e; }
-        .icon[data-color="blue"] { background-color: #61dafb; }
-        .icon[data-color="purple"] { background-color: #6f42c1; }
-        .icon[data-color="green"] { background-color: #34d058; }
-    </style>
+    <title>Bố cục 3 cột 4 hàng</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Navbar -->
-    <div class="navbar">
-        <div class="logo">Coderbyte</div>
-        <div class="menu">
-            <a href="#">Developers</a>
-            <a href="#">Organizations</a>
-            <a href="#">Dashboard</a>
-        </div>
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+        <div class="grid-item">10</div>
+        <div class="grid-item">11</div>
+        <div class="grid-item">12</div>
     </div>
-
-    <!-- Left Sidebar -->
-    <div class="sidebar left-sidebar">
-        <div class="triangle-container">
-            <div class="icon"><i class="fab fa-aws"></i> AWS</div>
-            <div class="icon"><i class="fab fa-golang"></i> Go</div>
-            <div class="icon"><i class="fab fa-android"></i> Android</div>
-            <div class="icon"><i class="fab fa-node-js"></i> Node JS</div>
-            <div class="icon"><i class="fab fa-js-square"></i> JavaScript</div>
-            <div class="icon"><i class="fab fa-vuejs"></i> Vue JS</div>
-            <div class="icon"><i class="fab fa-swift"></i> Swift</div>
-            <div class="icon"><i class="fab fa-react"></i> Redux</div>
-        </div>
-    </div>
-
-    <!-- Right Sidebar -->
-    <div class="sidebar right-sidebar">
-        <div class="triangle-container">
-            <div class="icon" data-color="purple"><i class="fas fa-code"></i> GraphQL</div>
-            <div class="icon"><i class="fab fa-git-alt"></i> Git</div>
-            <div class="icon"><i class="fab fa-css3-alt"></i> CSS3</div>
-            <div class="icon" data-color="blue"><i class="fab fa-microsoft"></i> Azure</div>
-            <div class="icon"><i class="fas fa-terminal"></i> Bash</div>
-            <div class="icon" data-color="green"><i class="fab fa-python"></i> Python</div>
-            <div class="icon"><i class="fab fa-php"></i> PHP</div>
-            <div class="icon"><i class="fab fa-js"></i> jQuery</div>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <div class="content">
-        <p class="subtitle">FOR ORGANIZATIONS</p>
-        <h1>Assess Candidates Quickly, Cost-Effectively, and Accurately</h1>
-        <p>The #1 platform for technical assessments, interviews, and projects. Unlimited candidates and admins in all plans.</p>
-        
-        <!-- Email Form -->
-        <div class="email-form">
-            <input type="email" class="email-input" placeholder="Enter your work email">
-            <button class="start-btn">Start Free Trial</button>
-        </div>
-        <a href="#" style="display: block; margin-top: 1rem; color: #666;">Learn more</a>
-    </div>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </body>
 </html>
