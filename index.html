@@ -3,23 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bố cục Toàn Màn Hình</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif; /* Phông chữ */
+        }
+
+        .grid-container {
+            display: grid; /* Sử dụng Grid Layout */
+            grid-template-columns: repeat(3, 1fr); /* 3 cột với chiều rộng bằng nhau */
+            grid-template-rows: repeat(4, 150px); /* 4 hàng, mỗi hàng cao 150px */
+            gap: 10px; /* Khoảng cách giữa các ô */
+            padding: 10px; /* Khoảng đệm bên ngoài */
+            height: 100vh; /* Đặt chiều cao toàn bộ */
+        }
+
+        .grid-item {
+            background-color: #4CAF50; /* Màu nền cho các ô */
+            color: white; /* Màu chữ */
+            display: flex; /* Sử dụng Flexbox để căn giữa nội dung */
+            justify-content: center; /* Căn giữa theo chiều ngang */
+            align-items: center; /* Căn giữa theo chiều dọc */
+            border-radius: 5px; /* Bo góc cho ô (tuỳ chọn) */
+            font-size: 20px; /* Kích thước chữ */
+        }
+        @media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cột trên thiết bị nhỏ hơn */
+        grid-template-rows: repeat(6, 100px); /* 6 hàng, mỗi hàng cao 100px */
+    }
+}
+
+@media (max-width: 400px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* 1 cột trên thiết bị rất nhỏ */
+        grid-template-rows: repeat(12, 50px); /* 12 hàng, mỗi hàng cao 50px */
+    }
+}
+
+    </style>
 </head>
 <body>
-    <div class="grid-container">
-        <div class="grid-item">1</div>
-        <div class="grid-item">2</div>
-        <div class="grid-item">3</div>
-        <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
-        <div class="grid-item">6</div>
-        <div class="grid-item">7</div>
-        <div class="grid-item">8</div>
-        <div class="grid-item">9</div>
-        <div class="grid-item">10</div>
-        <div class="grid-item">11</div>
-        <div class="grid-item">12</div>
-    </div>
+
+<div class="grid-container">
+    <div class="grid-item">Ô 1</div>
+    <div class="grid-item">Ô 2</div>
+    <div class="grid-item">Ô 3</div>
+    <div class="grid-item">Ô 4</div>
+    <div class="grid-item">Ô 5</div>
+    <div class="grid-item">Ô 6</div>
+    <div class="grid-item">Ô 7</div>
+    <div class="grid-item">Ô 8</div>
+    <div class="grid-item">Ô 9</div>
+    <div class="grid-item">Ô 10</div>
+    <div class="grid-item">Ô 11</div>
+    <div class="grid-item">Ô 12</div>
+</div>
+
 </body>
 </html>
