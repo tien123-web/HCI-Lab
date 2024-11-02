@@ -2,8 +2,8 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%; /* Đảm bảo chiều cao của HTML và body là 100% */
     margin: 0;
     padding: 0;
 }
@@ -13,14 +13,15 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
     gap: 10px; /* khoảng cách giữa các ô */
-    padding: 10px;
+    height: 100vh; /* Đảm bảo lưới chiếm toàn bộ chiều cao của viewport */
+    width: 100vw; /* Đảm bảo lưới chiếm toàn bộ chiều rộng của viewport */
 }
 
 .grid-item {
-    background-color: #4CAF50; /* màu nền của các ô */
-    color: white; /* màu chữ */
+    background-color: transparent; /* Không có màu nền */
+    color: #333; /* Màu chữ */
     text-align: center;
     padding: 20px;
-    border: 1px solid #fff; /* viền trắng */
+    border: 1px solid #ccc; /* Viền màu xám cho các ô */
     font-size: 20px;
 }
