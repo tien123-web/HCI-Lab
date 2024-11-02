@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coderbyte - Đánh giá ứng viên</title>
+    <title>Coderbyte - Candidate Assessment</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset CSS */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
             background-color: #f9f9f9;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
         }
 
         /* Navbar */
@@ -23,6 +31,9 @@
             display: flex;
             justify-content: space-between;
             padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
             align-items: center;
         }
 
@@ -35,18 +46,27 @@
         /* Main content */
         .content {
             text-align: center;
-            margin: 4rem auto;
+            margin-top: 8rem;
             max-width: 600px;
+        }
+
+        .content .subtitle {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 0.5rem;
         }
 
         .content h1 {
             color: #3ccf91;
             font-size: 2.5rem;
+            font-weight: bold;
         }
 
         .content h2 {
-            color: #1a1a2e;
-            font-size: 2rem;
+            color: #333;
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
         }
 
         .content p {
@@ -89,7 +109,7 @@
         .sidebar {
             position: fixed;
             top: 20%;
-            width: 120px;
+            width: 150px;
         }
 
         .left-sidebar {
@@ -109,7 +129,15 @@
             text-align: center;
             font-size: 0.9rem;
             color: #333;
+            font-weight: bold;
+            width: fit-content;
         }
+
+        /* Adding custom colors to specific icons */
+        .icon[data-color="yellow"] { background-color: #f7df1e; }
+        .icon[data-color="blue"] { background-color: #61dafb; }
+        .icon[data-color="purple"] { background-color: #6f42c1; }
+        .icon[data-color="green"] { background-color: #34d058; }
     </style>
 </head>
 <body>
@@ -127,10 +155,10 @@
     <!-- Left Sidebar -->
     <div class="sidebar left-sidebar">
         <span class="icon">AWS</span>
-        <span class="icon">Go</span>
+        <span class="icon" data-color="blue">Go</span>
         <span class="icon">Android</span>
         <span class="icon">Node JS</span>
-        <span class="icon">Java</span>
+        <span class="icon" data-color="yellow">JS</span>
         <span class="icon">Vue JS</span>
         <span class="icon">Swift</span>
         <span class="icon">Redux</span>
@@ -138,26 +166,28 @@
 
     <!-- Right Sidebar -->
     <div class="sidebar right-sidebar">
-        <span class="icon">GraphQL</span>
+        <span class="icon" data-color="purple">GraphQL</span>
         <span class="icon">Git</span>
         <span class="icon">CSS3</span>
-        <span class="icon">Azure</span>
+        <span class="icon" data-color="blue">Azure</span>
         <span class="icon">Bash</span>
-        <span class="icon">Python</span>
+        <span class="icon" data-color="green">Python</span>
         <span class="icon">PHP</span>
         <span class="icon">jQuery</span>
     </div>
 
     <!-- Main Content -->
     <div class="content">
-        <h1>Đánh giá ứng viên Nhanh chóng, Tiết kiệm, và Chính xác</h1>
-        <p>Nền tảng số 1 cho các bài đánh giá kỹ thuật, phỏng vấn và dự án. Có ứng viên và quản trị viên không giới hạn trong mọi gói.</p>
+        <p class="subtitle">FOR ORGANIZATIONS</p>
+        <h1>Assess Candidates Quickly, Cost-Effectively, and Accurately</h1>
+        <p>The #1 platform for technical assessments, interviews, and projects. Unlimited candidates and admins in all plans.</p>
         
         <!-- Email Form -->
         <div class="email-form">
-            <input type="email" class="email-input" placeholder="Nhập địa chỉ email công việc">
-            <button class="start-btn">Bắt đầu dùng thử</button>
+            <input type="email" class="email-input" placeholder="Enter your work email">
+            <button class="start-btn">Start Free Trial</button>
         </div>
+        <a href="#" style="display: block; margin-top: 1rem; color: #666;">Learn more</a>
     </div>
 
 </body>
