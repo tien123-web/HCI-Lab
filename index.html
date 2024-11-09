@@ -133,7 +133,7 @@ function login() {
     const email = document.getElementById("login-email").value;
     const password = document.getElementById("login-password").value;
 
-    if (email === "test@example.com" && password === "123456") {
+    if (email && password ) {
         alert("Login successful!");
     } else {
         alert("Invalid email or password.");
