@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đăng nhập Gấu Trúc</title>
+  <title>Panda Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Roboto" rel="stylesheet">
   <style>
+    *, *:after, *:before {
+      box-sizing: border-box;
+    }
+
     body {
-      background: #aedff7;
+      background: rgba(255, 64, 129, 0.8);
       text-align: center;
       font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
     }
 
     .panda {
@@ -19,74 +22,95 @@
       margin: 50px auto;
     }
 
-    .ear {
-      position: absolute;
-      width: 80px;
-      height: 80px;
-      background: #000;
-      border: 10px solid #fff;
-      border-radius: 50%;
-      left: -15px;
-      top: -15px;
-    }
-
-    .ear::after {
-      content: '';
-      width: 80px;
-      height: 80px;
-      background: #000;
-      border: 10px solid #fff;
-      border-radius: 50%;
-      position: absolute;
-      top: 0;
-      left: 125px;
-    }
-
     .face {
       width: 200px;
       height: 200px;
       background: #fff;
       border-radius: 50%;
+      margin: 50px auto;
       box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
-      margin: auto;
+      z-index: 50;
+      position: relative;
+    }
+
+    .ear {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: #000;
+      z-index: 5;
+      border: 10px solid #fff;
+      left: -15px;
+      top: -15px;
+      border-radius: 50%;
+    }
+
+    .ear:after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: #000;
+      border: 10px solid #fff;
+      border-radius: 50%;
+      left: 125px;
+      top: 0;
     }
 
     .eye-shade {
       background: #000;
       width: 50px;
       height: 80px;
+      margin: 10px;
       position: absolute;
       top: 35px;
       left: 25px;
-      border-radius: 25px;
+      transform: rotate(220deg);
+      border-radius: 25px / 20px 30px 35px 40px;
     }
 
     .eye-shade.rgt {
-      left: 125px;
+      transform: rotate(140deg);
+      left: 105px;
     }
 
     .eye-white {
-      background: #fff;
-      width: 40px;
-      height: 50px;
       position: absolute;
-      top: 40px;
-      left: 35px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
+      background: #fff;
+      z-index: 500;
+      left: 40px;
+      top: 80px;
+      overflow: hidden;
     }
 
     .eye-white.rgt {
-      left: 135px;
+      right: 40px;
+      left: auto;
     }
 
     .eye-ball {
-      background: #000;
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
       position: absolute;
-      top: 17px;
-      left: 10px;
+      width: 0px;
+      height: 0px;
+      left: 20px;
+      top: 20px;
+      max-width: 10px;
+      max-height: 10px;
+      transition: 0.1s;
+    }
+
+    .eye-ball:after {
+      content: '';
+      background: #000;
+      position: absolute;
+      border-radius: 50%;
+      right: 0;
+      bottom: 0px;
+      width: 20px;
+      height: 20px;
     }
 
     .nose {
@@ -94,59 +118,137 @@
       height: 20px;
       width: 35px;
       bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-radius: 50px 20px / 30px 15px;
+      transform: rotate(15deg);
       background: #000;
-      border-radius: 50px;
     }
 
-    .mouth {
+    .body {
+      background: #fff;
       position: absolute;
-      width: 80px;
-      height: 40px;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 0 0 50px 50px;
-      background: #000;
+      top: 200px;
+      left: -20px;
+      border-radius: 100px / 126px 126px 96px 96px;
+      width: 250px;
+      height: 282px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    form {
+      max-width: 400px;
+      padding: 20px 40px;
+      background: #fff;
+      height: 300px;
+      margin: auto;
+      display: block;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+      position: relative;
+      transform: translateY(-100px);
+      z-index: 500;
+      border: 1px solid #eee;
+      transition: 0.3s;
+    }
+
+    h1 {
+      color: #FF4081;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .btn {
+      background: #fff;
+      padding: 5px;
+      width: 150px;
+      height: 35px;
+      border: 1px solid #FF4081;
+      margin-top: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 50px rgba(255, 64, 129, 0.8) inset;
+      color: #fff;
+    }
+
+    .btn:hover {
+      box-shadow: 0 0 rgba(255, 64, 129, 0.8) inset;
+      color: #FF4081;
     }
 
     .form-group {
-      margin: 20px auto;
       position: relative;
-    }
-
-    .form-control {
-      width: 80%;
-      padding: 10px;
-      margin: 10px auto;
-      border: 2px solid #ccc;
-      border-radius: 5px;
+      font-size: 15px;
+      color: #666;
     }
 
     .form-label {
       position: absolute;
-      top: -20px;
-      left: 10%;
-      font-size: 14px;
+      z-index: 1;
+      left: 0;
+      top: 5px;
+      transition: 0.3s;
+    }
+
+    .form-control {
+      width: 100%;
+      position: relative;
+      z-index: 3;
+      height: 35px;
+      background: none;
+      border: none;
+      padding: 5px 0;
+      transition: 0.3s;
+      border-bottom: 1px solid #777;
+      color: #555;
+    }
+
+    .form-control:focus,
+    .form-control:valid {
+      outline: none;
+      box-shadow: 0 1px #FF4081;
+      border-color: #FF4081;
     }
 
     .alert {
-      color: red;
-      display: none;
+      position: absolute;
+      color: #f00;
+      font-size: 16px;
+      right: -180px;
+      top: -300px;
+      z-index: 200;
+      padding: 30px 25px;
+      background: #fff;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 50%;
+      opacity: 0;
+      transform: scale(0);
+      transition: 0.4s 0.6s linear;
     }
 
-    .btn {
-      padding: 10px 20px;
-      background: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+    .wrong-entry {
+      animation: wrong-log 0.3s;
     }
 
-    .btn:hover {
-      background: #0056b3;
+    .wrong-entry .alert {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @keyframes wrong-log {
+      0%,
+      100% {
+        left: 0px;
+      }
+
+      20%,
+      60% {
+        left: 20px;
+      }
+
+      40%,
+      80% {
+        left: -20px;
+      }
     }
   </style>
 </head>
@@ -163,62 +265,39 @@
         <div class="eye-ball"></div>
       </div>
       <div class="nose"></div>
-      <div class="mouth"></div>
     </div>
     <div class="body"></div>
-    <div class="foot">
-      <div class="finger"></div>
-    </div>
-    <div class="foot rgt">
-      <div class="finger"></div>
-    </div>
   </div>
   <form>
-    <div class="hand"></div>
-    <div class="hand rgt"></div>
-    <h1>Đăng nhập Gấu Trúc</h1>
+    <h1>Panda Login</h1>
     <div class="form-group">
-      <input type="text" required class="form-control">
-      <label class="form-label">Tên đăng nhập</label>
+      <input required="required" class="form-control" />
+      <label class="form-label">Username</label>
     </div>
     <div class="form-group">
-      <input id="password" type="password" required class="form-control">
-      <label class="form-label">Mật khẩu</label>
-      <p class="alert">Thông tin đăng nhập không hợp lệ!</p>
-      <button class="btn" type="button">Đăng nhập</button>
+      <input id="password" type="password" required="required" class="form-control" />
+      <label class="form-label">Password</label>
+      <p class="alert">Invalid Credentials..!!</p>
+      <button class="btn">Login</button>
     </div>
   </form>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.querySelector("form");
-      const alertBox = document.querySelector(".alert");
-      const passwordInput = document.getElementById("password");
-      const eyes = document.querySelectorAll(".eye-ball");
+    const passwordField = document.getElementById('password');
+    const form = document.querySelector('form');
 
-      // Hiệu ứng khi nhập mật khẩu
-      passwordInput.addEventListener("focusin", () => form.classList.add("up"));
-      passwordInput.addEventListener("focusout", () => form.classList.remove("up"));
+    passwordField.addEventListener('focusin', () => {
+      form.style.transform = 'translateY(-180px)';
+    });
 
-      // Di chuyển mắt gấu trúc
-      document.addEventListener("mousemove", (event) => {
-        const dw = document.body.offsetWidth / 15;
-        const dh = document.body.offsetHeight / 15;
-        const x = event.pageX / dw;
-        const y = event.pageY / dh;
-        eyes.forEach((eye) => {
-          eye.style.transform = `translate(${x}px, ${y}px)`;
-        });
-      });
+    passwordField.addEventListener('focusout', () => {
+      form.style.transform = 'translateY(-100px)';
+    });
 
-      // Kiểm tra đăng nhập
-      document.querySelector(".btn").addEventListener("click", () => {
-        form.classList.add("wrong-entry");
-        alertBox.style.display = "block";
-        setTimeout(() => {
-          form.classList.remove("wrong-entry");
-          alertBox.style.display = "none";
-        }, 3000);
-      });
+    document.querySelector('.btn').addEventListener('click', () => {
+      form.classList.add('wrong-entry');
+      setTimeout(() => {
+        form.classList.remove('wrong-entry');
+      }, 3000);
     });
   </script>
 </body>
