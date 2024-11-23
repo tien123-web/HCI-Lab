@@ -3,301 +3,210 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panda Login</title>
-  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Roboto" rel="stylesheet">
+  <title>Panda Login - Enhanced</title>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Roboto&display=swap" rel="stylesheet">
   <style>
-    *, *:after, *:before {
+    /* Reset CSS */
+    *, *:before, *:after {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      background: rgba(255, 64, 129, 0.8);
-      text-align: center;
+      background: linear-gradient(120deg, #ff9a9e 0%, #fad0c4 100%);
       font-family: 'Roboto', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      color: #FF4081;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      text-align: center;
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      width: 400px;
     }
 
     .panda {
       position: relative;
-      width: 200px;
-      margin: 50px auto;
-    }
-
-    .face {
-      width: 200px;
-      height: 200px;
-      background: #fff;
-      border-radius: 50%;
-      margin: 50px auto;
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
-      z-index: 50;
-      position: relative;
+      width: 150px;
+      margin: 0 auto 30px auto;
     }
 
     .ear {
       position: absolute;
-      width: 80px;
-      height: 80px;
-      background: #000;
-      z-index: 5;
-      border: 10px solid #fff;
-      left: -15px;
-      top: -15px;
-      border-radius: 50%;
-    }
-
-    .ear:after {
-      content: '';
-      position: absolute;
-      width: 80px;
-      height: 80px;
-      background: #000;
-      border: 10px solid #fff;
-      border-radius: 50%;
-      left: 125px;
-      top: 0;
-    }
-
-    .eye-shade {
-      background: #000;
       width: 50px;
-      height: 80px;
-      margin: 10px;
-      position: absolute;
-      top: 35px;
-      left: 25px;
-      transform: rotate(220deg);
-      border-radius: 25px / 20px 30px 35px 40px;
-    }
-
-    .eye-shade.rgt {
-      transform: rotate(140deg);
-      left: 105px;
-    }
-
-    .eye-white {
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: #fff;
-      z-index: 500;
-      left: 40px;
-      top: 80px;
-      overflow: hidden;
-    }
-
-    .eye-white.rgt {
-      right: 40px;
-      left: auto;
-    }
-
-    .eye-ball {
-      position: absolute;
-      width: 0px;
-      height: 0px;
-      left: 20px;
-      top: 20px;
-      max-width: 10px;
-      max-height: 10px;
-      transition: 0.1s;
-    }
-
-    .eye-ball:after {
-      content: '';
+      height: 50px;
       background: #000;
-      position: absolute;
       border-radius: 50%;
-      right: 0;
-      bottom: 0px;
-      width: 20px;
-      height: 20px;
+      top: -25px;
+    }
+
+    .ear.left {
+      left: -25px;
+    }
+
+    .ear.right {
+      right: -25px;
+    }
+
+    .face {
+      width: 150px;
+      height: 150px;
+      background: #fff;
+      border-radius: 50%;
+      position: relative;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .eye {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: #000;
+      border-radius: 50%;
+      top: 50px;
+    }
+
+    .eye.left {
+      left: 30px;
+    }
+
+    .eye.right {
+      right: 30px;
     }
 
     .nose {
       position: absolute;
+      width: 20px;
       height: 20px;
-      width: 35px;
-      bottom: 40px;
-      left: 0;
-      right: 0;
-      margin: auto;
-      border-radius: 50px 20px / 30px 15px;
-      transform: rotate(15deg);
       background: #000;
-    }
-
-    .body {
-      background: #fff;
-      position: absolute;
-      top: 200px;
-      left: -20px;
-      border-radius: 100px / 126px 126px 96px 96px;
-      width: 250px;
-      height: 282px;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    form {
-      max-width: 400px;
-      padding: 20px 40px;
-      background: #fff;
-      height: 300px;
-      margin: auto;
-      display: block;
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
-      position: relative;
-      transform: translateY(-100px);
-      z-index: 500;
-      border: 1px solid #eee;
-      transition: 0.3s;
-    }
-
-    h1 {
-      color: #FF4081;
-      font-family: 'Dancing Script', cursive;
-    }
-
-    .btn {
-      background: #fff;
-      padding: 5px;
-      width: 150px;
-      height: 35px;
-      border: 1px solid #FF4081;
-      margin-top: 25px;
-      cursor: pointer;
-      transition: 0.3s;
-      box-shadow: 0 50px rgba(255, 64, 129, 0.8) inset;
-      color: #fff;
-    }
-
-    .btn:hover {
-      box-shadow: 0 0 rgba(255, 64, 129, 0.8) inset;
-      color: #FF4081;
+      border-radius: 50%;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .form-group {
       position: relative;
-      font-size: 15px;
-      color: #666;
-    }
-
-    .form-label {
-      position: absolute;
-      z-index: 1;
-      left: 0;
-      top: 5px;
-      transition: 0.3s;
+      margin-bottom: 20px;
     }
 
     .form-control {
       width: 100%;
-      position: relative;
-      z-index: 3;
-      height: 35px;
-      background: none;
-      border: none;
-      padding: 5px 0;
-      transition: 0.3s;
-      border-bottom: 1px solid #777;
-      color: #555;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s;
     }
 
-    .form-control:focus,
-    .form-control:valid {
-      outline: none;
-      box-shadow: 0 1px #FF4081;
+    .form-control:focus {
       border-color: #FF4081;
+      box-shadow: 0 0 5px rgba(255, 64, 129, 0.5);
+    }
+
+    .form-label {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      background: #fff;
+      padding: 0 5px;
+      color: #aaa;
+      font-size: 14px;
+      pointer-events: none;
+      transition: top 0.3s, font-size 0.3s;
+    }
+
+    .form-control:focus + .form-label,
+    .form-control:valid + .form-label {
+      top: -10px;
+      font-size: 12px;
+      color: #FF4081;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background: #FF4081;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #e91e63;
     }
 
     .alert {
-      position: absolute;
-      color: #f00;
-      font-size: 16px;
-      right: -180px;
-      top: -300px;
-      z-index: 200;
-      padding: 30px 25px;
-      background: #fff;
-      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-      border-radius: 50%;
-      opacity: 0;
-      transform: scale(0);
-      transition: 0.4s 0.6s linear;
+      margin-top: 10px;
+      color: #e91e63;
+      display: none;
+      font-size: 14px;
     }
 
-    .wrong-entry {
-      animation: wrong-log 0.3s;
-    }
-
-    .wrong-entry .alert {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    @keyframes wrong-log {
-      0%,
-      100% {
-        left: 0px;
-      }
-
-      20%,
-      60% {
-        left: 20px;
-      }
-
-      40%,
-      80% {
-        left: -20px;
-      }
+    .alert.show {
+      display: block;
     }
   </style>
 </head>
 <body>
-  <div class="panda">
-    <div class="ear"></div>
-    <div class="face">
-      <div class="eye-shade"></div>
-      <div class="eye-white">
-        <div class="eye-ball"></div>
+  <div class="container">
+    <div class="panda">
+      <div class="ear left"></div>
+      <div class="ear right"></div>
+      <div class="face">
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="nose"></div>
       </div>
-      <div class="eye-shade rgt"></div>
-      <div class="eye-white rgt">
-        <div class="eye-ball"></div>
-      </div>
-      <div class="nose"></div>
     </div>
-    <div class="body"></div>
-  </div>
-  <form>
     <h1>Panda Login</h1>
-    <div class="form-group">
-      <input required="required" class="form-control" />
-      <label class="form-label">Username</label>
-    </div>
-    <div class="form-group">
-      <input id="password" type="password" required="required" class="form-control" />
-      <label class="form-label">Password</label>
-      <p class="alert">Invalid Credentials..!!</p>
-      <button class="btn">Login</button>
-    </div>
-  </form>
+    <form id="loginForm">
+      <div class="form-group">
+        <input type="text" id="username" class="form-control" required />
+        <label for="username" class="form-label">Username</label>
+      </div>
+      <div class="form-group">
+        <input type="password" id="password" class="form-control" required />
+        <label for="password" class="form-label">Password</label>
+      </div>
+      <button type="button" class="btn" id="loginBtn">Login</button>
+      <p class="alert" id="errorMessage">Invalid username or password!</p>
+    </form>
+  </div>
   <script>
-    const passwordField = document.getElementById('password');
-    const form = document.querySelector('form');
+    const loginBtn = document.getElementById('loginBtn');
+    const errorMessage = document.getElementById('errorMessage');
 
-    passwordField.addEventListener('focusin', () => {
-      form.style.transform = 'translateY(-180px)';
-    });
+    loginBtn.addEventListener('click', () => {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
 
-    passwordField.addEventListener('focusout', () => {
-      form.style.transform = 'translateY(-100px)';
-    });
-
-    document.querySelector('.btn').addEventListener('click', () => {
-      form.classList.add('wrong-entry');
-      setTimeout(() => {
-        form.classList.remove('wrong-entry');
-      }, 3000);
+      if (username === 'admin' && password === 'admin') {
+        alert('Login successful!');
+      } else {
+        errorMessage.classList.add('show');
+        setTimeout(() => {
+          errorMessage.classList.remove('show');
+        }, 3000);
+      }
     });
   </script>
 </body>
