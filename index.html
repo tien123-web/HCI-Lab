@@ -1,202 +1,225 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Authentication System</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập Gấu Trúc</title>
+  <style>
+    body {
+      background: #aedff7;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
+    .panda {
+      position: relative;
+      width: 200px;
+      margin: 50px auto;
+    }
 
-        h1 {
-            text-align: center;
-        }
+    .ear {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: #000;
+      border: 10px solid #fff;
+      border-radius: 50%;
+      left: -15px;
+      top: -15px;
+    }
 
-        input[type="text"], input[type="email"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+    .ear::after {
+      content: '';
+      width: 80px;
+      height: 80px;
+      background: #000;
+      border: 10px solid #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 125px;
+    }
 
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    .face {
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+      margin: auto;
+    }
 
-        button:hover {
-            background-color: #45a049;
-        }
+    .eye-shade {
+      background: #000;
+      width: 50px;
+      height: 80px;
+      position: absolute;
+      top: 35px;
+      left: 25px;
+      border-radius: 25px;
+    }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+    .eye-shade.rgt {
+      left: 125px;
+    }
 
-        li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #f9f9f9;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 5px;
-        }
+    .eye-white {
+      background: #fff;
+      width: 40px;
+      height: 50px;
+      position: absolute;
+      top: 40px;
+      left: 35px;
+      border-radius: 50%;
+    }
 
-        li button {
-            background-color: red;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            cursor: pointer;
-        }
+    .eye-white.rgt {
+      left: 135px;
+    }
 
-        li button:hover {
-            background-color: #e44e4e;
-        }
+    .eye-ball {
+      background: #000;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      position: absolute;
+      top: 17px;
+      left: 10px;
+    }
 
-        p {
-            margin-top: 15px;
-        }
+    .nose {
+      position: absolute;
+      height: 20px;
+      width: 35px;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #000;
+      border-radius: 50px;
+    }
 
-        a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
+    .mouth {
+      position: absolute;
+      width: 80px;
+      height: 40px;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 0 0 50px 50px;
+      background: #000;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    .form-group {
+      margin: 20px auto;
+      position: relative;
+    }
+
+    .form-control {
+      width: 80%;
+      padding: 10px;
+      margin: 10px auto;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-label {
+      position: absolute;
+      top: -20px;
+      left: 10%;
+      font-size: 14px;
+    }
+
+    .alert {
+      color: red;
+      display: none;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+  </style>
 </head>
 <body>
+  <div class="panda">
+    <div class="ear"></div>
+    <div class="face">
+      <div class="eye-shade"></div>
+      <div class="eye-white">
+        <div class="eye-ball"></div>
+      </div>
+      <div class="eye-shade rgt"></div>
+      <div class="eye-white rgt">
+        <div class="eye-ball"></div>
+      </div>
+      <div class="nose"></div>
+      <div class="mouth"></div>
+    </div>
+    <div class="body"></div>
+    <div class="foot">
+      <div class="finger"></div>
+    </div>
+    <div class="foot rgt">
+      <div class="finger"></div>
+    </div>
+  </div>
+  <form>
+    <div class="hand"></div>
+    <div class="hand rgt"></div>
+    <h1>Đăng nhập Gấu Trúc</h1>
+    <div class="form-group">
+      <input type="text" required class="form-control">
+      <label class="form-label">Tên đăng nhập</label>
+    </div>
+    <div class="form-group">
+      <input id="password" type="password" required class="form-control">
+      <label class="form-label">Mật khẩu</label>
+      <p class="alert">Thông tin đăng nhập không hợp lệ!</p>
+      <button class="btn" type="button">Đăng nhập</button>
+    </div>
+  </form>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector("form");
+      const alertBox = document.querySelector(".alert");
+      const passwordInput = document.getElementById("password");
+      const eyes = document.querySelectorAll(".eye-ball");
 
-<div class="container" id="login-form">
-    <h1>Login</h1>
-    <input type="email" id="login-email" placeholder="Enter your email" required>
-    <input type="password" id="login-password" placeholder="Enter your password" required>
-    <button onclick="login()">Sign </button>
-    <p>
-        <a href="#" onclick="showForgotPassword()">Forgot Password?</a> |
-        <a href="#" onclick="showRegister()">Register</a>
-    </p>
-</div>
+      // Hiệu ứng khi nhập mật khẩu
+      passwordInput.addEventListener("focusin", () => form.classList.add("up"));
+      passwordInput.addEventListener("focusout", () => form.classList.remove("up"));
 
-<div class="container" id="register-form" style="display: none;">
-    <h1>Register</h1>
-    <input type="text" id="register-username" placeholder="Enter your username" required>
-    <input type="email" id="register-email" placeholder="Enter your email" required>
-    <input type="password" id="register-password" placeholder="Enter your password" required>
-    <button onclick="register()">Register</button>
-    <p><a href="#" onclick="showLogin()">Back to Login</a></p>
-</div>
+      // Di chuyển mắt gấu trúc
+      document.addEventListener("mousemove", (event) => {
+        const dw = document.body.offsetWidth / 15;
+        const dh = document.body.offsetHeight / 15;
+        const x = event.pageX / dw;
+        const y = event.pageY / dh;
+        eyes.forEach((eye) => {
+          eye.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      });
 
-<div class="container" id="forgot-password-form" style="display: none;">
-    <h1>Forgot Password</h1>
-    <input type="email" id="forgot-email" placeholder="Enter your email" required>
-    <button onclick="resetPassword()">Reset Password</button>
-    <p><a href="#" onclick="showLogin()">Back to Login</a></p>
-</div>
-
-<script>
-    // Function to show login form
-    function showLogin() {
-        document.getElementById("login-form").style.display = "block";
-        document.getElementById("register-form").style.display = "none";
-        document.getElementById("forgot-password-form").style.display = "none";
-    }
-
-    // Function to show register form
-    function showRegister() {
-        document.getElementById("login-form").style.display = "none";
-        document.getElementById("register-form").style.display = "block";
-        document.getElementById("forgot-password-form").style.display = "none";
-    }
-
-    // Function to show forgot password form
-    function showForgotPassword() {
-        document.getElementById("login-form").style.display = "none";
-        document.getElementById("register-form").style.display = "none";
-        document.getElementById("forgot-password-form").style.display = "block";
-    }
-
-    // Login function
-    function login() {
-        const email = document.getElementById("login-email").value;
-        const password = document.getElementById("login-password").value;
-
-        let users = JSON.parse(localStorage.getItem('users')) || [];
-
-        const user = users.find(u => u.email === email && u.password === password);
-
-        if (user) {
-            alert("Login successful!");
-            showLogin();
-        } else {
-            alert("Invalid email or password.");
-        }
-    }
-
-    // Register function
-    function register() {
-        const username = document.getElementById("register-username").value;
-        const email = document.getElementById("register-email").value;
-        const password = document.getElementById("register-password").value;
-
-        let users = JSON.parse(localStorage.getItem('users')) || [];
-
-        const userExists = users.some(u => u.email === email);
-
-        if (userExists) {
-            alert("User already exists. Please log in.");
-        } else {
-            users.push({ username, email, password });
-            localStorage.setItem('users', JSON.stringify(users));
-            alert("Registration successful!");
-            showLogin();
-        }
-    }
-
-    // Forgot password function
-    function resetPassword() {
-        const email = document.getElementById("forgot-email").value;
-
-        let users = JSON.parse(localStorage.getItem('users')) || [];
-
-        const user = users.find(u => u.email === email);
-
-        if (user) {
-            alert("Password reset link has been sent to your email.");
-            showLogin();
-        } else {
-            alert("Email not found.");
-        }
-    }
-
-</script>
-
+      // Kiểm tra đăng nhập
+      document.querySelector(".btn").addEventListener("click", () => {
+        form.classList.add("wrong-entry");
+        alertBox.style.display = "block";
+        setTimeout(() => {
+          form.classList.remove("wrong-entry");
+          alertBox.style.display = "none";
+        }, 3000);
+      });
+    });
+  </script>
 </body>
 </html>
