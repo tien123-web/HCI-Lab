@@ -1,0 +1,152 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f9fc;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0b1d2d;
+  color: #ffffff;
+  padding: 15px 30px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: #ffffff;
+  margin-left: 25px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Main Content Layout */
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tech-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tech-icons-left {
+  align-items: flex-start;
+}
+
+.tech-icons-right {
+  align-items: flex-end;
+}
+
+.tech-icons span {
+  background-color: #ffffff;
+  border: 1px solid #dcdfe3;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+/* Promo Section Styling */
+.promo-section {
+  text-align: center;
+  max-width: 600px;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #f3f5f9;
+  color: #6c757d;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 42px;
+  color: #2cc195;
+  margin: 20px 0;
+}
+
+h1 br {
+  display: none;
+}
+
+p {
+  font-size: 16px;
+  color: #6c757d;
+  margin-bottom: 25px;
+}
+
+.email-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.email-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.email-form button {
+  background-color: #2cc195;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.email-form button:hover {
+  background-color: #28a085;
+}
+
+.learn-more {
+  color: #6c757d;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .tech-icons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .promo-section {
+    margin-top: 30px;
+  }
+}
