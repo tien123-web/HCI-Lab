@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: url("/img/hinhnen2.jpg") no-repeat center center;
+  background: url("./img/hinhnen2.jpg") no-repeat center center;
   background-size: contain; /* Hình nền sẽ vừa với kích thước nội dung chính */
   color: #333;
 }
