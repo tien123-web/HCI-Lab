@@ -117,25 +117,25 @@ footer {
 
 .index-content {
   flex: 1;
-  background-color: #ffffff;
-  padding: 30px;
-  max-width: 900px;
-  margin: 30px auto;
-  text-align: left;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: url("/img/hinhnen2.jpg") no-repeat center center;
+  background-size: contain; /* Hình nền sẽ vừa với kích thước nội dung chính */
+  padding: 50px;
+  width: 90vw; /* Tăng chiều rộng nội dung chính */
+  max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+  min-height: calc(100vh - 100px); /* Điều chỉnh chiều cao để không quá nhỏ */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto; /* Căn giữa nội dung chính */
 }
 
-.index-content h1 {
-  color: #2c3e50;
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
+.index-content h1,
 .index-content p {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.6;
+  background: rgba(255, 255, 255, 0.644); /* Nền mờ giúp chữ dễ đọc hơn */
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
 }
 
 /* --------------------- Trang About --------------------- */
