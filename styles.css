@@ -132,10 +132,10 @@ footer {
 
 .index-content h1,
 .index-content p {
-/*  background: rgba(255, 255, 255, 0.644); /* Nền mờ giúp chữ dễ đọc hơn */
-  padding: 10px;
-  border-radius: 8px;
-  text-align: center;
+ background: rgba(255, 255, 255, 0.644); /* Nền mờ giúp chữ dễ đọc hơn */
+ padding: 10px;
+ border-radius: 8px;
+ text-align: center;
 }
 
 /* --------------------- Trang About --------------------- */
